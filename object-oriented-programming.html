@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Object-Oriented Programming</h1>
+    </header>
+
+    <main>
+        <section id="object-oriented-programming">
+            <h2>Object-Oriented Programming (OOP)</h2>
+            <p>Object-Oriented Programming is a programming paradigm based on the concept of objects, which can contain data and code. Python is an object-oriented programming language, which allows you to create classes, objects, and use concepts such as inheritance and polymorphism.</p>
+            <ul>
+                <li>Classes and Objects</li>
+                <li>Attributes and Methods</li>
+                <li>Inheritance</li>
+                <li>Encapsulation</li>
+                <li>Polymorphism</li>
+            </ul>
+
+            <h3>Classes and Objects</h3>
+            <p>A class is a blueprint for creating objects. An object is an instance of a class. You define a class using the <code>class</code> keyword.</p>
+            <pre><code>
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        return "Woof!"
+
+# Creating an instance of the Dog class
+my_dog = Dog("Buddy", 3)
+print(my_dog.name)  # Output: Buddy
+print(my_dog.bark())  # Output: Woof!
+            </code></pre>
+
+            <h3>Attributes and Methods</h3>
+            <p>Attributes are variables that belong to a class. Methods are functions that belong to a class.</p>
+            <pre><code>
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def start_engine(self):
+        return f"{self.make} {self.model}'s engine is now running."
+
+my_car = Car("Toyota", "Camry", 2022)
+print(my_car.start_engine())  # Output: Toyota Camry's engine is now running.
+            </code></pre>
+
+            <h3>Inheritance</h3>
+            <p>Inheritance allows you to define a new class that inherits the attributes and methods of an existing class. This helps in code reusability and creating a hierarchical relationship between classes.</p>
+            <pre><code>
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Some sound"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+my_cat = Cat("Whiskers")
+print(my_cat.name)  # Output: Whiskers
+print(my_cat.speak())  # Output: Meow!
+            </code></pre>
+
+            <h3>Encapsulation</h3>
+            <p>Encapsulation is the concept of wrapping data (attributes) and methods into a single unit or class. It also helps in restricting access to certain components of an object.</p>
+            <pre><code>
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age  # Private attribute
+
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        if age > 0:
+            self.__age = age
+
+person = Person("Alice", 30)
+print(person.get_age())  # Output: 30
+person.set_age(35)
+print(person.get_age())  # Output: 35
+            </code></pre>
+
+            <h3>Polymorphism</h3>
+            <p>Polymorphism allows methods to do different things based on the object it is acting upon. It allows for different implementations of the same method depending on the context.</p>
+            <pre><code>
+class Bird:
+    def fly(self):
+        return "Flying in the sky"
+
+class Penguin(Bird):
+    def fly(self):
+        return "I can't fly"
+
+def make_it_fly(bird):
+    print(bird.fly())
+
+sparrow = Bird()
+penguin = Penguin()
+
+make_it_fly(sparrow)  # Output: Flying in the sky
+make_it_fly(penguin)  # Output: I can't fly
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

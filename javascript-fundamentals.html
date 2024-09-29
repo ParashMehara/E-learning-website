@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Fundamentals</h1>
+    </header>
+
+    <main>
+        <section id="javascript-fundamentals">
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is a versatile programming language that allows you to create interactive and dynamic web content. It is commonly used for client-side scripting to enhance user experiences on websites. JavaScript can be used to manipulate HTML and CSS, handle events, and perform calculations.</p>
+            <p>JavaScript is an essential skill for web developers, enabling them to create complex functionality and interactivity in web applications.</p>
+
+            <h2 id="syntax">JavaScript Syntax</h2>
+            <p>JavaScript syntax refers to the set of rules that define a correctly structured JavaScript program. JavaScript code is written in statements, which can be simple expressions or more complex blocks.</p>
+            <pre><code>// Single-line comment
+
+/*
+  Multi-line comment
+*/
+
+/* Example of a JavaScript statement */
+let message = 'Hello, World!';
+console.log(message); // Output: Hello, World!</code></pre>
+
+            <h2 id="variables">Variables</h2>
+            <p>Variables in JavaScript are used to store data values. You can declare variables using <code>var</code>, <code>let</code>, or <code>const</code> keywords. The choice of keyword determines the variable's scope and mutability.</p>
+            <ul>
+                <li><strong>var:</strong> Function-scoped or globally scoped, can be re-declared and updated.</li>
+                <li><strong>let:</strong> Block-scoped, can be updated but not re-declared in the same scope.</li>
+                <li><strong>const:</strong> Block-scoped, cannot be updated or re-declared, used for constants.</li>
+            </ul>
+            <p>Examples:</p>
+            <pre><code>// Variable declaration and initialization
+let name = 'John';
+const age = 30;
+
+console.log(name); // Output: John
+console.log(age);  // Output: 30
+
+// Trying to reassign a const variable will cause an error
+// age = 31; // Uncaught TypeError: Assignment to constant variable</code></pre>
+
+            <h2 id="data-types">Data Types</h2>
+            <p>JavaScript has several data types that can be categorized into primitives and objects:</p>
+            <ul>
+                <li><strong>Primitive Data Types:</strong>
+                    <ul>
+                        <li><strong>String:</strong> Represents text. Example: <code>'hello'</code></li>
+                        <li><strong>Number:</strong> Represents numeric values. Example: <code>42</code></li>
+                        <li><strong>Boolean:</strong> Represents <code>true</code> or <code>false</code></li>
+                        <li><strong>Null:</strong> Represents the absence of value. Example: <code>null</code></li>
+                        <li><strong>Undefined:</strong> Represents a variable that has not been assigned a value. Example: <code>undefined</code></li>
+                        <li><strong>Symbol:</strong> Represents a unique identifier. Example: <code>Symbol('description')</code></li>
+                        <li><strong>BigInt:</strong> Represents integers with arbitrary precision. Example: <code>1234567890123456789012345678901234567890n</code></li>
+                    </ul>
+                </li>
+                <li><strong>Objects:</strong> More complex data structures that include arrays, functions, and custom objects.</li>
+            </ul>
+            <p>Examples:</p>
+            <pre><code>let message = 'Hello, World!';
+let count = 10;
+let isActive = true;
+let user = null;
+let notDefined;
+let uniqueSymbol = Symbol('id');
+let largeNumber = 1234567890123456789012345678901234567890n;
+
+console.log(typeof message); // Output: string
+console.log(typeof count);   // Output: number
+console.log(typeof isActive); // Output: boolean
+console.log(typeof user);    // Output: object
+console.log(typeof notDefined); // Output: undefined
+console.log(typeof uniqueSymbol); // Output: symbol
+console.log(typeof largeNumber); // Output: bigint</code></pre>
+
+            <h2 id="functions">Functions</h2>
+            <p>Functions in JavaScript are blocks of code designed to perform a particular task. They can be defined using function declarations or function expressions. Functions can also accept parameters and return values.</p>
+            <ul>
+                <li><strong>Function Declaration:</strong> Defined with the <code>function</code> keyword.</li>
+                <li><strong>Function Expression:</strong> Defined as part of an expression, often used with anonymous functions.</li>
+            </ul>
+            <p>Examples:</p>
+            <pre><code>// Function Declaration
+function greet(name) {
+    return 'Hello, ' + name + '!';
+}
+
+console.log(greet('Alice')); // Output: Hello, Alice!
+
+// Function Expression
+const multiply = function(a, b) {
+    return a * b;
+};
+
+console.log(multiply(5, 3)); // Output: 15
+
+// Arrow Function
+const add = (a, b) => a + b;
+
+console.log(add(4, 6)); // Output: 10</code></pre>
+
+            <h2 id="control-flow">Control Flow</h2>
+            <p>Control flow statements manage the flow of execution in a program. They include conditionals and loops:</p>
+            <ul>
+                <li><strong>Conditionals:</strong> Used to execute code based on certain conditions. Examples include <code>if</code>, <code>else if</code>, and <code>switch</code>.</li>
+                <li><strong>Loops:</strong> Used to repeat code multiple times. Examples include <code>for</code>, <code>while</code>, and <code>do...while</code>.</li>
+            </ul>
+            <p>Examples:</p>
+            <pre><code>// If-Else Statement
+let score = 85;
+
+if (score >= 90) {
+    console.log('A');
+} else if (score >= 80) {
+    console.log('B');
+} else {
+    console.log('C');
+}
+
+// Switch Statement
+let day = 2;
+switch (day) {
+    case 1:
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    default:
+        console.log('Other Day');
+        break;
+}
+
+// For Loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// While Loop
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+// Do-While Loop
+let number = 0;
+do {
+    console.log(number);
+    number++;
+} while (number < 5);</code></pre>
+
+            <h2 id="objects">Objects</h2>
+            <p>Objects are collections of key-value pairs. They can be used to store multiple values in a single variable. Each key is a string (or Symbol) and is associated with a value, which can be any data type.</p>
+            <p>Examples:</p>
+            <pre><code>// Object Literal
+const person = {
+    name: 'John',
+    age: 30,
+    greet: function() {
+        return 'Hello, ' + this.name;
+    }
+};
+
+console.log(person.name); // Output: John
+console.log(person.greet()); // Output: Hello, John
+
+// Accessing Object Properties
+console.log(person['age']); // Output: 30
+
+// Adding Properties
+person.email = 'john@example.com';
+console.log(person.email); // Output: john@example.com
+</code></pre>
+
+            <h2 id="arrays">Arrays</h2>
+            <p>Arrays are used to store multiple values in a single variable. They can hold values of any type and are indexed, meaning each value has a numeric position starting from 0.</p>
+            <p>Examples:</p>
+            <pre><code>// Array Declaration
+const fruits = ['apple', 'banana', 'cherry'];
+
+console.log(fruits[0]); // Output: apple
+console.log(fruits.length); // Output: 3
+
+// Array Methods
+fruits.push('date');
+console.log(fruits); // Output: ['apple', 'banana', 'cherry', 'date']
+
+fruits.pop();
+console.log(fruits); // Output: ['apple', 'banana', 'cherry']
+
+fruits.shift();
+console.log(fruits); // Output: ['banana', 'cherry']
+
+fruits.unshift('apricot');
+console.log(fruits); // Output: ['apricot', 'banana', 'cherry']
+
+// Iterating over an Array
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+</code></pre>
+
+            <h2 id="events">Events</h2>
+            <p>Events are actions that occur in the browser, such as user interactions (clicks, key presses) or other changes. JavaScript can handle these events to create interactive web applications.</p>
+            <p>Examples:</p>
+            <pre><code>// Adding an Event Listener
+document.querySelector('button').addEventListener('click', function() {
+    alert('Button clicked!');
+});
+
+// Handling Form Submission
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the form from submitting the default way
+    console.log('Form submitted');
+});
+</code></pre>
+
+            <h2 id="advanced">Advanced Topics</h2>
+            <p>Advanced JavaScript topics include more complex concepts and features:</p>
+            <ul>
+                <li><strong>Closures:</strong> Functions that have access to variables from their outer scope even after the outer function has finished executing.</li>
+                <li><strong>Asynchronous JavaScript:</strong> Handling asynchronous operations using callbacks, promises, and async/await.</li>
+                <li><strong>Prototypes:</strong> The mechanism by which JavaScript objects inherit features from one another.</li>
+                <li><strong>ES6 Features:</strong> New syntax and features introduced in ECMAScript 6, such as arrow functions, template literals, and destructuring.</li>
+            </ul>
+            <p>Examples:</p>
+            <pre><code>// Closure Example
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+
+// Promise Example
+const fetchData = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Data fetched');
+    }, 2000);
+});
+
+fetchData.then(data => {
+    console.log(data); // Output: Data fetched
+});
+
+// Async/Await Example
+async function fetchDataAsync() {
+    let data = await fetchData;
+    console.log(data); // Output: Data fetched
+}
+
+fetchDataAsync();
+</code></pre>
+
+            <h2 id="resources">Additional Resources</h2>
+            <p>Explore these resources to deepen your JavaScript knowledge:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Web Docs - JavaScript</a></li>
+                <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
+                <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript Tutorial</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+</body>
+</html>

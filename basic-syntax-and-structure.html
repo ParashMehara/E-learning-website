@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax and Structure - C Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Basic Syntax and Structure</h1>
+    </header>
+
+    <main>
+        <section id="basic-syntax-and-structure">
+            <h2>Basic Syntax and Structure</h2>
+            <p>C programming language has a specific syntax and structure that is essential to understand for writing correct and efficient code. This section covers the fundamental components of C syntax and the structure of a C program.</p>
+
+            <h3>Program Structure</h3>
+            <p>A basic C program consists of several key elements:</p>
+            <ul>
+                <li><strong>Preprocessor Directives:</strong> These lines begin with the <code>#</code> symbol and are used to include libraries or define macros. Example: <code>#include &lt;stdio.h&gt;</code>.</li>
+                <li><strong>Main Function:</strong> The entry point of a C program. It is where the execution starts. Example: <code>int main()</code>.</li>
+                <li><strong>Statements and Expressions:</strong> The actual code that performs tasks, written inside the main function. Statements end with a semicolon <code>;</code>.</li>
+                <li><strong>Return Statement:</strong> Used to return a value from the main function to the operating system. Example: <code>return 0;</code>.</li>
+            </ul>
+
+            <h3>Basic Syntax Rules</h3>
+            <p>Here are some essential syntax rules for C programming:</p>
+            <ul>
+                <li><strong>Case Sensitivity:</strong> C is case-sensitive. For example, <code>Variable</code> and <code>variable</code> are different identifiers.</li>
+                <li><strong>Semicolons:</strong> Statements in C must end with a semicolon. For example: <code>int a = 5;</code>.</li>
+                <li><strong>Braces:</strong> Curly braces <code>{ }</code> are used to define the beginning and end of functions and control structures.</li>
+                <li><strong>Comments:</strong> Use <code>//</code> for single-line comments and <code>/* ... */</code> for multi-line comments. Comments are ignored by the compiler and are used to explain code.</li>
+            </ul>
+
+            <h3>Example of a Basic C Program</h3>
+            <p>Here is an example of a basic C program that demonstrates the basic syntax and structure:</p>
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Print a message to the console
+    printf("Welcome to C Programming!\n");
+    return 0;
+}
+            </code></pre>
+            <p>This program includes the <code>stdio.h</code> header file for input/output functions, defines the <code>main</code> function, and uses the <code>printf</code> function to display a message.</p>
+
+            <h3>Variables and Data Types</h3>
+            <p>Variables are used to store data in C programs. Each variable must be declared with a specific data type. Common data types include:</p>
+            <ul>
+                <li><strong>int:</strong> Used for integer values. Example: <code>int age = 25;</code></li>
+                <li><strong>float:</strong> Used for floating-point numbers. Example: <code>float salary = 5000.50;</code></li>
+                <li><strong>char:</strong> Used for single characters. Example: <code>char grade = 'A';</code></li>
+            </ul>
+
+            <h3>Operators in C</h3>
+            <p>C provides several operators for performing operations on variables and values. Some common operators include:</p>
+            <ul>
+                <li><strong>Arithmetic Operators:</strong> + (addition), - (subtraction), * (multiplication), / (division), % (modulus).</li>
+                <li><strong>Relational Operators:</strong> == (equal to), != (not equal to), > (greater than), < (less than).</li>
+                <li><strong>Logical Operators:</strong> && (logical AND), || (logical OR), ! (logical NOT).</li>
+            </ul>
+
+            <h3>Example Program with Variables and Operators</h3>
+            <p>Here’s an example that demonstrates the use of variables and operators:</p>
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1 = 10, num2 = 20;
+    int sum = num1 + num2;
+    printf("Sum of %d and %d is %d\n", num1, num2, sum);
+    return 0;
+}
+            </code></pre>
+            <p>This program declares two integer variables, calculates their sum, and prints the result.</p>
+
+            <h3>Common Errors and How to Avoid Them</h3>
+            <p>Here are some common syntax errors and tips to avoid them:</p>
+            <ul>
+                <li><strong>Missing Semicolons:</strong> Ensure every statement ends with a semicolon.</li>
+                <li><strong>Unmatched Braces:</strong> Verify that every opening brace has a corresponding closing brace.</li>
+                <li><strong>Incorrect Variable Declarations:</strong> Declare variables with appropriate data types before using them.</li>
+            </ul>
+
+            <h3>Practice Exercises</h3>
+            <p>Try writing and running the following programs to practice:</p>
+            <ul>
+                <li>Write a program to calculate the area of a rectangle given its length and width.</li>
+                <li>Write a program to find the largest of three numbers.</li>
+                <li>Write a program to convert temperature from Celsius to Fahrenheit.</li>
+            </ul>
+
+            <h3>Further Reading</h3>
+            <p>For more information on basic syntax and structure in C, consider these resources:</p>
+            <ul>
+                <li><a href="https://www.learn-c.org/">Learn-C.org</a> - An interactive C tutorial for beginners.</li>
+                <li><a href="https://www.cprogramming.com/tutorial/c/lesson1.html">CProgramming.com - Introduction to C</a> - A tutorial covering C basics.</li>
+                <li><a href="https://www.geeksforgeeks.org/c-programming-language/">GeeksforGeeks - C Programming</a> - Articles and examples on C programming.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

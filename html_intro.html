@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML - Web Development Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to HTML</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What is HTML?</h2>
+            <p>HTML stands for HyperText Markup Language. It is the standard language used for creating and designing webpages. HTML elements are the fundamental building blocks of web pages, providing structure and meaning to the content.</p>
+            <p>HTML documents are composed of elements such as headings, paragraphs, lists, and links. Each HTML element is defined by tags and attributes that help format and organize the content on a webpage.</p>
+        </section>
+
+        <section>
+            <h2>Basic Structure of an HTML Document</h2>
+            <p>An HTML document follows a basic structure which consists of the following elements:</p>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares the document type and HTML version.</li>
+                <li><strong>&lt;html&gt;</strong> - The root element that wraps the entire HTML document.</li>
+                <li><strong>&lt;head&gt;</strong> - Contains meta-information about the document, including the title, character encoding, and links to stylesheets.</li>
+                <li><strong>&lt;body&gt;</strong> - Contains the visible content of the document, such as headings, paragraphs, images, and links.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Example of a Simple HTML Document</h2>
+            <p>Here is an example of a basic HTML document:</p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First HTML Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>HTML Tags and Elements</h2>
+            <p>HTML tags are used to define elements on a webpage. Tags typically come in pairs: an opening tag and a closing tag. The opening tag defines the beginning of an element, while the closing tag defines its end.</p>
+            <p>For example:</p>
+            <pre><code>
+&lt;tagname&gt;Content&lt;/tagname&gt;
+            </code></pre>
+            <p>Common HTML tags include:</p>
+            <ul>
+                <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong> - Headings, with &lt;h1&gt; being the largest and &lt;h6&gt; the smallest.</li>
+                <li><strong>&lt;p&gt;</strong> - Defines a paragraph.</li>
+                <li><strong>&lt;a&gt;</strong> - Defines a hyperlink. Use the <code>href</code> attribute to specify the URL.</li>
+                <li><strong>&lt;img&gt;</strong> - Embeds an image. Use the <code>src</code> attribute to specify the image source.</li>
+                <li><strong>&lt;div&gt;</strong> - Defines a division or section. Useful for grouping content.</li>
+                <li><strong>&lt;span&gt;</strong> - Defines a section in a document, usually for styling purposes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Attributes</h2>
+            <p>Attributes provide additional information about HTML elements. They are added to the opening tag of an element and are written in name/value pairs. For example:</p>
+            <pre><code>
+&lt;elementname attribute="value"&gt;Content&lt;/elementname&gt;
+            </code></pre>
+            <p>Common attributes include:</p>
+            <ul>
+                <li><strong>href</strong> - Specifies the URL for hyperlinks.</li>
+                <li><strong>src</strong> - Specifies the URL of an image.</li>
+                <li><strong>alt</strong> - Provides alternative text for images.</li>
+                <li><strong>class</strong> - Assigns one or more class names to an element for styling with CSS.</li>
+                <li><strong>id</strong> - Provides a unique identifier for an element, used for styling with CSS or accessing with JavaScript.</li>
+                <li><strong>style</strong> - Applies inline CSS styling directly to an element.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Document Metadata</h2>
+            <p>Metadata is information about the HTML document that is not displayed on the webpage but is used by browsers and search engines. Metadata is placed within the <strong>&lt;head&gt;</strong> section of the document.</p>
+            <ul>
+                <li><strong>&lt;meta charset="UTF-8"&gt;</strong> - Specifies the character encoding for the document, ensuring text is displayed correctly.</li>
+                <li><strong>&lt;meta name="description" content="A description of the page"&gt;</strong> - Provides a brief description of the page's content for search engines.</li>
+                <li><strong>&lt;meta name="keywords" content="HTML, web development, tutorial"&gt;</strong> - Lists keywords relevant to the page.</li>
+                <li><strong>&lt;link rel="stylesheet" href="styles.css"&gt;</strong> - Links to an external CSS stylesheet for styling the document.</li>
+                <li><strong>&lt;title&gt;</strong> - Defines the title of the document, displayed in the browser's title bar or tab.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Forms</h2>
+            <p>Forms are used to collect user input. They can contain various elements such as text fields, checkboxes, radio buttons, and submit buttons.</p>
+            <p>Here is a basic example of an HTML form:</p>
+            <pre><code>
+	&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+		&lt;input type="text" id="name" name="name"&gt;
+    &lt;br&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+		&lt;input type="email" id="email" name="email"&gt;
+    &lt;br&gt;
+		&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </code></pre>
+            <p>Form elements include:</p>
+            <ul>
+                <li><strong>&lt;input&gt;</strong> - Defines an input field. Use the <code>type</code> attribute to specify the type of input (text, email, password, etc.).</li>
+                <li><strong>&lt;textarea&gt;</strong> - Defines a multi-line text input field.</li>
+                <li><strong>&lt;select&gt;</strong> - Defines a drop-down list. Use <strong>&lt;option&gt;</strong> to define options within the list.</li>
+                <li><strong>&lt;button&gt;</strong> - Defines a clickable button.</li>
+                <li><strong>&lt;fieldset&gt;</strong> - Groups related form elements.</li>
+                <li><strong>&lt;legend&gt;</strong> - Defines a caption for a <strong>&lt;fieldset&gt;</strong>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Tables</h2>
+            <p>HTML tables are used to display tabular data. A table is defined with the <strong>&lt;table&gt;</strong> tag, and it contains rows defined by the <strong>&lt;tr&gt;</strong> tag. Each row contains cells defined by <strong>&lt;td&gt;</strong> (table data) and <strong>&lt;th&gt;</strong> (table header) tags.</p>
+            <p>Here is an example of a simple HTML table:</p>
+            <pre><code>
+&lt;table border="1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data 1&lt;/td&gt;
+            &lt;td&gt;Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </code></pre>
+            <p>Table tags include:</p>
+            <ul>
+                <li><strong>&lt;thead&gt;</strong> - Groups the header content in a table.</li>
+                <li><strong>&lt;tbody&gt;</strong> - Groups the body content in a table.</li>
+                <li><strong>&lt;tfoot&gt;</strong> - Groups the footer content in a table.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Semantic Elements</h2>
+            <p>Semantic elements are HTML5 elements that carry meaning about the content they enclose, providing a clear structure to the webpage. These elements help with accessibility and search engine optimization.</p>
+            <p>Examples of semantic elements include:</p>
+            <ul>
+                <li><strong>&lt;header&gt;</strong> - Defines a header for a document or section.</li>
+                <li><strong>&lt;nav&gt;</strong> - Defines a navigation bar.</li>
+                <li><strong>&lt;article&gt;</strong> - Defines an independent piece of content.</li>
+                <li><strong>&lt;section&gt;</strong> - Defines a section in a document.</li>
+                <li><strong>&lt;aside&gt;</strong> - Defines content aside from the main content.</li>
+                <li><strong>&lt;footer&gt;</strong> - Defines a footer for a document or section.</li>
+                <li><strong>&lt;main&gt;</strong> - Defines the main content of the document.</li>
+                <li><strong>&lt;figure&gt;</strong> - Defines self-contained content, such as images or diagrams.</li>
+                <li><strong>&lt;figcaption&gt;</strong> - Provides a caption for a <strong>&lt;figure&gt;</strong> element.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Multimedia Elements</h2>
+            <p>HTML supports embedding multimedia content such as images, audio, and video. These elements enhance the visual and interactive aspects of a webpage.</p>
+            <p>Examples include:</p>
+            <pre><code>
+&lt;img src="image.jpg" alt="Description of image"&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+            </code></pre>
+            <p>Attributes for these elements include:</p>
+            <ul>
+                <li><strong>controls</strong> - Adds playback controls for audio and video elements.</li>
+                <li><strong>autoplay</strong> - Specifies that the audio or video should start playing automatically.</li>
+                <li><strong>loop</strong> - Specifies that the audio or video should loop.</li>
+                <li><strong>muted</strong> - Specifies that the audio should be muted by default.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HTML Document Validation</h2>
+            <p>Validating your HTML document ensures that it adheres to the standards set by the World Wide Web Consortium (W3C). This helps in maintaining compatibility across different browsers and improving the overall quality of your webpage.</p>
+            <p>You can validate your HTML document using online tools such as the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>.</p>
+        </section>
+
+        <section>
+            <h2>HTML Best Practices</h2>
+            <p>Following best practices when writing HTML helps ensure that your code is clean, maintainable, and accessible. Some best practices include:</p>
+            <ul>
+                <li>Use semantic elements to give meaning to your content.</li>
+                <li>Ensure that your HTML is properly nested and structured.</li>
+                <li>Provide alternative text for images and multimedia elements.</li>
+                <li>Use comments to explain sections of your code.</li>
+                <li>Validate your HTML to catch errors and improve compatibility.</li>
+                <li>Follow a consistent coding style for readability.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RSP. All rights reserved.</p>
+    </footer>
+</body>
+</html>

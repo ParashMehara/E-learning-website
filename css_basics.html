@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Basics</h1>
+    </header>
+
+    <main>
+        <section id="css-basics">
+            <h2>Introduction to CSS</h2>
+            <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS defines how HTML elements are to be displayed on screen, paper, or in other media. It enables you to control the layout, colors, fonts, and overall appearance of web pages.</p>
+            <p>CSS is essential for creating visually appealing and well-structured web pages. It separates content from design, allowing for a more flexible and maintainable approach to web development.</p>
+
+            <h2 id="syntax">CSS Syntax</h2>
+            <p>CSS rules are made up of two main parts: selectors and declarations. The basic syntax of a CSS rule is:</p>
+            <pre><code>selector {
+    property: value;
+}</code></pre>
+            <ul>
+                <li><strong>Selector:</strong> Specifies which HTML elements the style will apply to. Examples include element names, class names, and IDs.</li>
+                <li><strong>Property:</strong> Defines the aspect of the element that you want to change (e.g., color, font-size).</li>
+                <li><strong>Value:</strong> Specifies the value for the property (e.g., red, 16px).</li>
+            </ul>
+            <p>Here’s an example of a CSS rule that changes the color of all paragraphs to blue:</p>
+            <pre><code>p {
+    color: blue;
+}</code></pre>
+
+            <h2 id="selectors">CSS Selectors</h2>
+            <p>Selectors are used to target the HTML elements that you want to style. Here are some common types:</p>
+            <ul>
+                <li><strong>Element Selector:</strong> Targets elements by their tag name. Example: <code>h1</code>, <code>p</code>.</li>
+                <li><strong>Class Selector:</strong> Targets elements with a specific class attribute. Example: <code>.my-class</code>. Use this selector for multiple elements with the same style.</li>
+                <li><strong>ID Selector:</strong> Targets an element with a specific ID attribute. Example: <code>#my-id</code>. IDs should be unique within a page.</li>
+                <li><strong>Attribute Selector:</strong> Targets elements with a specific attribute. Example: <code>[type="text"]</code>.</li>
+                <li><strong>Universal Selector:</strong> Targets all elements. Example: <code>*</code>.</li>
+            </ul>
+            <p>Here’s an example of using different selectors:</p>
+            <pre><code>/* Element Selector */
+p {
+    color: green;
+}
+
+/* Class Selector */
+.my-class {
+    font-size: 20px;
+}
+
+/* ID Selector */
+#my-id {
+    background-color: yellow;
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 1px solid black;
+}
+
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}</code></pre>
+
+            <h2 id="box-model">The CSS Box Model</h2>
+            <p>The CSS box model describes how elements are structured and how their dimensions are calculated. It consists of the following components:</p>
+            <ul>
+                <li><strong>Content:</strong> The actual content of the box (text, images, etc.).</li>
+                <li><strong>Padding:</strong> Space between the content and the border, inside the element.</li>
+                <li><strong>Border:</strong> Surrounds the padding and content.</li>
+                <li><strong>Margin:</strong> Space outside the border, separating the element from other elements.</li>
+            </ul>
+            <p>Here’s an example demonstrating the box model properties:</p>
+            <pre><code>/* Example of the box model in CSS */
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+}</code></pre>
+
+            <h2 id="layout">CSS Layout Techniques</h2>
+            <p>CSS provides various techniques for creating layouts. Here are some commonly used ones:</p>
+            <ul>
+                <li><strong>Floats:</strong> Originally used to create layouts and wrap text around images. Floats are less commonly used now in favor of Flexbox and Grid.</li>
+                <li><strong>Flexbox:</strong> A layout module that provides an easy way to align items and distribute space within a container. Flexbox is designed for one-dimensional layouts (row or column).</li>
+                <li><strong>Grid:</strong> A layout system that allows for two-dimensional layouts with rows and columns. It is more powerful and flexible than Flexbox for complex layouts.</li>
+            </ul>
+            <p>Examples of Flexbox and Grid in CSS:</p>
+            <pre><code>/* Flexbox example */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+}
+
+/* Grid example */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: lightgrey;
+    padding: 20px;
+}</code></pre>
+
+            <h2 id="advanced">Advanced CSS Topics</h2>
+            <p>Advanced CSS features allow for more control and creativity in web design:</p>
+            <ul>
+                <li><strong>CSS Variables:</strong> Allow you to store and reuse values throughout your CSS. Example:</li>
+                <pre><code>:root {
+    --main-bg-color: #f4f4f4;
+    --main-text-color: #333;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}</code></pre>
+                <li><strong>CSS Transitions:</strong> Enable smooth changes between property values. Example:</li>
+                <pre><code>.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: blue;
+}</code></pre>
+                <li><strong>CSS Animations:</strong> Allow you to create complex animations using keyframes. Example:</li>
+                <pre><code>@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slide 0.5s ease-in-out;
+}</code></pre>
+                <li><strong>Media Queries:</strong> Allow you to apply styles based on device characteristics like screen width. Example:</li>
+                <pre><code>@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+            </ul>
+
+            <h2 id="resources">Additional Resources</h2>
+            <p>Here are some useful resources to further your CSS knowledge:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+                <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+</body>
+</html>

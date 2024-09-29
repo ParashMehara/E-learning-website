@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to C - C Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to C</h1>
+    </header>
+
+    <main>
+        <section id="introduction-to-c">
+            <h2>Introduction to C</h2>
+            <p>C is a general-purpose, procedural programming language that has had a profound impact on many modern programming languages. Developed by Dennis Ritchie at Bell Labs in the early 1970s, C provides low-level access to memory and produces efficient machine code, making it ideal for system programming and embedded systems.</p>
+            
+            <h3>History of C</h3>
+            <p>The C programming language was derived from the B language, which was itself a simplified version of the BCPL language. C was designed to provide a more powerful and flexible programming tool than its predecessors, while maintaining a simple and understandable syntax.</p>
+            <p>It quickly gained popularity for its efficiency and portability, becoming a cornerstone of many software development projects. The C programming language has since influenced many other programming languages, including C++, C#, and Java.</p>
+            
+            <h3>Key Features of C</h3>
+            <ul>
+                <li><strong>Procedural Language:</strong> C follows a procedural programming paradigm, which means that programs are structured as a sequence of procedures or functions. This helps in organizing code and improving readability.</li>
+                <li><strong>Portability:</strong> Programs written in C can be compiled and run on different platforms with minimal modification, making C a portable language.</li>
+                <li><strong>Efficiency:</strong> C provides low-level access to memory and allows for direct manipulation of hardware, which leads to high-performance applications.</li>
+                <li><strong>Rich Library:</strong> C includes a comprehensive standard library that provides functions for handling tasks such as input/output operations, string manipulation, and mathematical computations.</li>
+                <li><strong>Pointer Support:</strong> C supports pointers, which are variables that store memory addresses. This feature allows for dynamic memory management and efficient data manipulation.</li>
+            </ul>
+
+            <h3>Basic Syntax of C</h3>
+            <p>C syntax is simple and straightforward. Here is a basic structure of a C program:</p>
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Your code goes here
+    return 0;
+}
+            </code></pre>
+            <p>The key components of a C program are:</p>
+            <ul>
+                <li><code>#include &lt;stdio.h&gt;</code>: This line includes the standard input/output library, which is necessary for using functions like <code>printf</code> and <code>scanf</code>.</li>
+                <li><code>int main()</code>: This is the main function where the execution of the program begins. Every C program must have a <code>main</code> function.</li>
+                <li><code>return 0;</code>: This statement returns a value of 0 to the operating system, indicating that the program executed successfully.</li>
+            </ul>
+
+            <h3>Example Program: Hello, World!</h3>
+            <p>Here is a simple C program that prints "Hello, World!" to the console:</p>
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+            </code></pre>
+            <p>This program uses the <code>printf</code> function to display a message on the screen. The <code>\n</code> at the end of the string is a newline character that moves the cursor to the next line.</p>
+
+            <h3>Compiling and Running C Programs</h3>
+            <p>To compile and run a C program, you will need a C compiler. GCC (GNU Compiler Collection) is a popular choice. Here are the steps to compile and run a C program:</p>
+            <ul>
+                <li><strong>Compile:</strong> Use the <code>gcc</code> command to compile the program. For example, <code>gcc -o myprogram myprogram.c</code> compiles <code>myprogram.c</code> and creates an executable named <code>myprogram</code>.</li>
+                <li><strong>Run:</strong> Execute the compiled program by typing <code>./myprogram</code> in the terminal.</li>
+            </ul>
+
+            <h3>Common Errors and Debugging</h3>
+            <p>When programming in C, you might encounter common errors such as syntax errors, type mismatches, and undeclared variables. Here are some tips for debugging:</p>
+            <ul>
+                <li><strong>Read Error Messages:</strong> Compiler error messages provide clues about what went wrong. Pay attention to line numbers and descriptions.</li>
+                <li><strong>Use Debuggers:</strong> Tools like GDB (GNU Debugger) can help you step through your code and inspect variables.</li>
+                <li><strong>Check Syntax:</strong> Ensure that all syntax rules are followed, including proper use of semicolons, braces, and parentheses.</li>
+            </ul>
+
+            <h3>Resources for Learning C</h3>
+            <p>To further your understanding of C programming, consider exploring the following resources:</p>
+            <ul>
+                <li><a href="https://www.learn-c.org/">Learn-C.org</a> - An interactive platform for learning C programming.</li>
+                <li><a href="https://www.cprogramming.com/">CProgramming.com</a> - Tutorials and resources for C programming.</li>
+                <li><a href="https://www.tutorialspoint.com/cprogramming/">TutorialsPoint - C Programming</a> - Comprehensive tutorials and examples for C programming.</li>
+                <li><a href="https://www.geeksforgeeks.org/c-programming-language/">GeeksforGeeks - C Programming</a> - Articles, quizzes, and practice problems for C.</li>
+                <li><a href="https://www.cplusplus.com/doc/tutorial/">CPlusPlus.com - C Tutorial</a> - Tutorials and reference material for C and C++ programming.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

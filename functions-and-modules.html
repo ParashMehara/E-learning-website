@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions and Modules - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Functions and Modules</h1>
+    </header>
+
+    <main>
+        <section id="functions-and-modules">
+            <h2>Functions and Modules</h2>
+            <p>Functions and modules are fundamental components in Python programming. They help you organize your code, make it reusable, and keep it modular. In this section, we will cover:</p>
+            <ul>
+                <li>Defining Functions</li>
+                <li>Calling Functions</li>
+                <li>Function Parameters</li>
+                <li>Return Values</li>
+                <li>Modules</li>
+                <li>Importing Modules</li>
+                <li>Creating Your Own Modules</li>
+            </ul>
+
+            <h3>Defining Functions</h3>
+            <p>A function is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.</p>
+            <pre><code>
+def greet():
+    print("Hello, World!")
+
+# Calling the function
+greet()
+            </code></pre>
+
+            <h3>Function Parameters</h3>
+            <p>Functions can take parameters (arguments) to customize their behavior.</p>
+            <pre><code>
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Calling the function with a parameter
+greet("Alice")
+            </code></pre>
+
+            <h3>Return Values</h3>
+            <p>Functions can return values using the <code>return</code> statement.</p>
+            <pre><code>
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8
+            </code></pre>
+
+            <h3>Modules</h3>
+            <p>A module is a file containing Python code. It can define functions, classes, and variables. Modules help you organize your code into manageable sections.</p>
+            <pre><code>
+# Importing the math module
+import math
+
+# Using functions from the math module
+print(math.sqrt(16))  # Output: 4.0
+print(math.pi)  # Output: 3.141592653589793
+            </code></pre>
+
+            <h3>Importing Modules</h3>
+            <p>You can import a module using the <code>import</code> statement. You can also import specific components from a module.</p>
+            <pre><code>
+# Importing specific functions from the math module
+from math import sqrt, pi
+
+print(sqrt(25))  # Output: 5.0
+print(pi)  # Output: 3.141592653589793
+            </code></pre>
+
+            <h3>Creating Your Own Modules</h3>
+            <p>You can create your own modules by saving functions and variables in a file with a .py extension.</p>
+            <pre><code>
+# In a file named my_module.py
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b
+
+# In another file
+import my_module
+
+print(my_module.greet("Alice"))  # Output: Hello, Alice!
+print(my_module.add(3, 5))  # Output: 8
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course - Pointers and Memory Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pointers and Memory Management</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Pointers and Memory Management</h2>
+            <p>Pointers and memory management are crucial aspects of C programming. They allow you to directly access and manipulate memory, providing powerful capabilities for managing resources and optimizing performance. This section covers the basics of pointers and memory management.</p>
+
+            <h3>Pointers</h3>
+            <p>Pointers are variables that store the address of another variable. They provide a way to directly access and modify the memory location of variables.</p>
+
+            <h4>Pointer Declaration</h4>
+            <pre><code>data_type *pointer_name;
+</code></pre>
+
+            <h4>Pointer Initialization</h4>
+            <pre><code>pointer_name = &variable_name;
+</code></pre>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+    int *ptr = &num;
+
+    printf("Value of num: %d\n", num);
+    printf("Address of num: %p\n", &num);
+    printf("Value of ptr: %p\n", ptr);
+    printf("Value pointed to by ptr: %d\n", *ptr);
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Memory Management</h3>
+            <p>In C, memory management is done manually using functions to allocate and deallocate memory dynamically. This allows you to handle memory efficiently and avoid memory leaks.</p>
+
+            <h4>Dynamic Memory Allocation</h4>
+            <p>Use the following functions to allocate and deallocate memory:</p>
+            <ul>
+                <li><strong>malloc:</strong> Allocates a block of memory.</li>
+                <li><strong>calloc:</strong> Allocates memory for an array and initializes it to zero.</li>
+                <li><strong>realloc:</strong> Resizes a previously allocated block of memory.</li>
+                <li><strong>free:</strong> Deallocates a previously allocated block of memory.</li>
+            </ul>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int *arr;
+    int n = 5;
+
+    // Allocate memory
+    arr = (int *)malloc(n * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    // Initialize and print array elements
+    for (int i = 0; i &lt; n; i++) {
+        arr[i] = i * 10;
+        printf("Element %d: %d\n", i, arr[i]);
+    }
+
+    // Deallocate memory
+    free(arr);
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Pointer to Pointer</h3>
+            <p>Pointers can also point to other pointers. This allows for more complex data structures and memory management techniques.</p>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 20;
+    int *ptr1 = &num;
+    int **ptr2 = &ptr1;
+
+    printf("Value of num: %d\n", num);
+    printf("Value of ptr1: %p\n", ptr1);
+    printf("Value pointed to by ptr1: %d\n", *ptr1);
+    printf("Value of ptr2: %p\n", ptr2);
+    printf("Value pointed to by ptr2: %p\n", *ptr2);
+    printf("Value pointed to by *ptr2: %d\n", **ptr2);
+
+    return 0;
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

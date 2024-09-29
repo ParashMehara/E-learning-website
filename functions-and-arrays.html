@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course - Functions and Arrays</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Functions and Arrays</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Functions and Arrays</h2>
+            <p>In C programming, functions and arrays are fundamental concepts that allow you to organize and manage your code efficiently. This section covers the basics of functions and arrays, including their declaration, definition, and usage.</p>
+
+            <h3>Functions</h3>
+            <p>Functions are blocks of code that perform specific tasks. They help in modularizing code, making it reusable and easier to understand. Functions can be declared and defined as follows:</p>
+
+            <h4>Function Declaration</h4>
+            <pre><code>return_type function_name(parameters);
+</code></pre>
+
+            <h4>Function Definition</h4>
+            <pre><code>return_type function_name(parameters) {
+    // code to be executed
+}
+</code></pre>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+// Function declaration
+void greet();
+
+int main() {
+    // Function call
+    greet();
+    return 0;
+}
+
+// Function definition
+void greet() {
+    printf("Hello, World!\n");
+}
+</code></pre>
+
+            <h3>Arrays</h3>
+            <p>Arrays are used to store multiple values of the same type in a single variable. Arrays can be declared and initialized as follows:</p>
+
+            <h4>Array Declaration</h4>
+            <pre><code>data_type array_name[array_size];
+</code></pre>
+
+            <h4>Array Initialization</h4>
+            <pre><code>data_type array_name[array_size] = {value1, value2, value3, ...};
+</code></pre>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int numbers[5] = {1, 2, 3, 4, 5};
+
+    // Accessing array elements
+    for (int i = 0; i &lt; 5; i++) {
+        printf("Element %d: %d\n", i, numbers[i]);
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Functions with Arrays</h3>
+            <p>Functions can also take arrays as parameters and return arrays. Here’s how you can pass an array to a function:</p>
+
+            <h4>Function Declaration with Array</h4>
+            <pre><code>void function_name(data_type array_name[], int size);
+</code></pre>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+void printArray(int arr[], int size);
+
+int main() {
+    int numbers[5] = {1, 2, 3, 4, 5};
+    printArray(numbers, 5);
+    return 0;
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i &lt; size; i++) {
+        printf("Element %d: %d\n", i, arr[i]);
+    }
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

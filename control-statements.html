@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course - Control Statements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Control Statements</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Control Statements</h2>
+            <p>Control statements in C allow you to control the flow of execution in your programs. They include conditional statements, loops, and jump statements.</p>
+
+            <h3>Conditional Statements</h3>
+            <p>Conditional statements allow you to execute code based on certain conditions. The main conditional statements in C are:</p>
+            <ul>
+                <li><strong>if statement:</strong> Executes a block of code if a specified condition is true.</li>
+                <li><strong>if-else statement:</strong> Executes one block of code if the condition is true and another block if it is false.</li>
+                <li><strong>else if statement:</strong> Tests multiple conditions, executing a block of code for the first true condition.</li>
+                <li><strong>switch statement:</strong> Allows you to select one of many code blocks to execute based on the value of an expression.</li>
+            </ul>
+
+            <h3>Loops</h3>
+            <p>Loops are used to execute a block of code multiple times. The main loops in C are:</p>
+            <ul>
+                <li><strong>for loop:</strong> Executes a block of code a specified number of times.</li>
+                <li><strong>while loop:</strong> Executes a block of code as long as a specified condition is true.</li>
+                <li><strong>do-while loop:</strong> Executes a block of code at least once and then continues executing as long as a specified condition is true.</li>
+            </ul>
+
+            <h3>Jump Statements</h3>
+            <p>Jump statements are used to transfer control to other parts of the program. The main jump statements in C are:</p>
+            <ul>
+                <li><strong>break statement:</strong> Exits from the innermost loop or switch statement.</li>
+                <li><strong>continue statement:</strong> Skips the remaining code in the current iteration of a loop and proceeds to the next iteration.</li>
+                <li><strong>goto statement:</strong> Transfers control to a labeled statement in the program (use with caution).</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+
+    // if statement
+    if (num > 0) {
+        printf("Number is positive\n");
+    }
+
+    // if-else statement
+    if (num % 2 == 0) {
+        printf("Number is even\n");
+    } else {
+        printf("Number is odd\n");
+    }
+
+    // switch statement
+    switch (num) {
+        case 1:
+            printf("Number is 1\n");
+            break;
+        case 10:
+            printf("Number is 10\n");
+            break;
+        default:
+            printf("Number is not 1 or 10\n");
+            break;
+    }
+
+    // for loop
+    for (int i = 0; i < 5; i++) {
+        printf("i = %d\n", i);
+    }
+
+    // while loop
+    int j = 0;
+    while (j < 5) {
+        printf("j = %d\n", j);
+        j++;
+    }
+
+    // do-while loop
+    int k = 0;
+    do {
+        printf("k = %d\n", k);
+        k++;
+    } while (k < 5);
+
+    return 0;
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

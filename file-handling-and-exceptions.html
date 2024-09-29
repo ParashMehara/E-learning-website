@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Handling and Exceptions - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>File Handling and Exceptions</h1>
+    </header>
+
+    <main>
+        <section id="file-handling-and-exceptions">
+            <h2>File Handling and Exceptions</h2>
+            <p>File handling is an important part of any web application. Python has several functions for creating, reading, updating, and deleting files. Exception handling is crucial for writing robust code that can handle errors gracefully.</p>
+            <ul>
+                <li>Opening and Closing Files</li>
+                <li>Reading from Files</li>
+                <li>Writing to Files</li>
+                <li>Exception Handling</li>
+                <li>Common Exceptions</li>
+                <li>Try, Except, Else, Finally</li>
+            </ul>
+
+            <h3>Opening and Closing Files</h3>
+            <p>You can open a file using the <code>open()</code> function. The <code>close()</code> method is used to close a file.</p>
+            <pre><code>
+# Opening a file
+file = open('example.txt', 'r')
+
+# Closing a file
+file.close()
+            </code></pre>
+
+            <h3>Reading from Files</h3>
+            <p>To read from a file, you can use methods like <code>read()</code>, <code>readline()</code>, or <code>readlines()</code>.</p>
+            <pre><code>
+file = open('example.txt', 'r')
+content = file.read()
+print(content)
+file.close()
+            </code></pre>
+
+            <h3>Writing to Files</h3>
+            <p>You can write to a file using the <code>write()</code> or <code>writelines()</code> methods. Ensure you open the file in write mode ('w') or append mode ('a').</p>
+            <pre><code>
+file = open('example.txt', 'w')
+file.write('Hello, World!')
+file.close()
+            </code></pre>
+
+            <h3>Exception Handling</h3>
+            <p>Exceptions are errors that occur during the execution of a program. Python provides a way to handle exceptions to prevent the program from crashing.</p>
+            <pre><code>
+try:
+    file = open('example.txt', 'r')
+    content = file.read()
+    print(content)
+except FileNotFoundError:
+    print('The file was not found.')
+finally:
+    file.close()
+            </code></pre>
+
+            <h3>Common Exceptions</h3>
+            <p>Some common exceptions in Python include:</p>
+            <ul>
+                <li><code>FileNotFoundError</code></li>
+                <li><code>ZeroDivisionError</code></li>
+                <li><code>ValueError</code></li>
+                <li><code>TypeError</code></li>
+                <li><code>IndexError</code></li>
+            </ul>
+
+            <h3>Try, Except, Else, Finally</h3>
+            <p>You can use the <code>try</code>, <code>except</code>, <code>else</code>, and <code>finally</code> blocks to handle exceptions in a more structured way.</p>
+            <pre><code>
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print('You cannot divide by zero.')
+else:
+    print('The division was successful.')
+finally:
+    print('This code runs no matter what.')
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types and Variables - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Data Types and Variables</h1>
+    </header>
+
+    <main>
+        <section id="data-types-and-variables">
+            <h2>Data Types and Variables</h2>
+            <p>In this section, we will explore the different data types available in Python and learn how to declare and use variables.</p>
+
+            <h3>What are Data Types?</h3>
+            <p>Data types are classifications of data that tell the interpreter how the programmer intends to use the data. Common data types in Python include:</p>
+            <ul>
+                <li><strong>Integers:</strong> Whole numbers, e.g., 1, 2, 3.</li>
+                <li><strong>Floats:</strong> Decimal numbers, e.g., 1.5, 2.7, 3.14.</li>
+                <li><strong>Strings:</strong> Sequence of characters, e.g., "Hello, World!"</li>
+                <li><strong>Booleans:</strong> True or False values.</li>
+                <li><strong>Lists:</strong> Ordered collection of items, e.g., [1, 2, 3].</li>
+                <li><strong>Tuples:</strong> Immutable ordered collection of items, e.g., (1, 2, 3).</li>
+                <li><strong>Dictionaries:</strong> Key-value pairs, e.g., {'name': 'John', 'age': 30}.</li>
+            </ul>
+
+            <h3>What are Variables?</h3>
+            <p>Variables are containers for storing data values. Unlike other programming languages, Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+            <p>Example:</p>
+            <pre><code>
+x = 5
+y = "Hello, World!"
+            </code></pre>
+            <p>In the example above, x is a variable with the value of 5, and y is a variable with the value of "Hello, World!"</p>
+
+            <h3>Data Type Examples</h3>
+            <h4>Integers and Floats</h4>
+            <pre><code>
+x = 10       # integer
+y = 2.5      # float
+print(x)
+print(y)
+            </code></pre>
+            
+            <h4>Strings</h4>
+            <pre><code>
+name = "Alice"
+print(name)
+            </code></pre>
+
+            <h4>Booleans</h4>
+            <pre><code>
+is_student = True
+is_teacher = False
+print(is_student)
+print(is_teacher)
+            </code></pre>
+
+            <h4>Lists</h4>
+            <pre><code>
+numbers = [1, 2, 3, 4, 5]
+print(numbers)
+            </code></pre>
+
+            <h4>Tuples</h4>
+            <pre><code>
+coordinates = (10.0, 20.0)
+print(coordinates)
+            </code></pre>
+
+            <h4>Dictionaries</h4>
+            <pre><code>
+person = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+print(person)
+            </code></pre>
+
+            <h3>Variable Naming Rules</h3>
+            <p>When naming variables in Python, follow these rules:</p>
+            <ul>
+                <li>Variable names must start with a letter or the underscore character.</li>
+                <li>Variable names cannot start with a number.</li>
+                <li>Variable names can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ).</li>
+                <li>Variable names are case-sensitive (age, Age, and AGE are three different variables).</li>
+            </ul>
+
+            <h3>Type Conversion</h3>
+            <p>Python allows you to convert from one data type to another. This is called type conversion.</p>
+            <p>Example:</p>
+            <pre><code>
+x = 1       # int
+y = 2.8     # float
+z = "3"     # str
+
+# Convert from int to float
+a = float(x)
+
+# Convert from float to int
+b = int(y)
+
+# Convert from str to int
+c = int(z)
+
+print(a)
+print(b)
+print(c)
+            </code></pre>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

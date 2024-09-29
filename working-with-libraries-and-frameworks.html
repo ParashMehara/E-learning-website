@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Libraries and Frameworks - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Working with Libraries and Frameworks</h1>
+    </header>
+
+    <main>
+        <section id="working-with-libraries-and-frameworks">
+            <h2>Working with Libraries and Frameworks</h2>
+            <p>In Python, libraries and frameworks are collections of modules and packages that provide pre-written code to help you perform common tasks and build applications more efficiently. Understanding how to use these libraries and frameworks is crucial for modern Python development.</p>
+            
+            <h3>Popular Python Libraries</h3>
+            <ul>
+                <li><strong>NumPy:</strong> A library for numerical computations and handling arrays.</li>
+                <li><strong>Pandas:</strong> A library for data manipulation and analysis, particularly with tabular data.</li>
+                <li><strong>Matplotlib:</strong> A library for creating static, animated, and interactive visualizations.</li>
+                <li><strong>Requests:</strong> A simple HTTP library for making requests to web servers.</li>
+                <li><strong>Beautiful Soup:</strong> A library for web scraping and parsing HTML/XML documents.</li>
+            </ul>
+
+            <h3>Installing Libraries</h3>
+            <p>To install a Python library, you can use the package manager <code>pip</code>. For example, to install NumPy, you would run:</p>
+            <pre><code>pip install numpy</code></pre>
+
+            <h3>Using Libraries</h3>
+            <p>Once a library is installed, you can import it into your Python script and use its functions and classes. Here is an example of using NumPy to create an array and perform basic operations:</p>
+            <pre><code>
+import numpy as np
+
+# Create a NumPy array
+array = np.array([1, 2, 3, 4, 5])
+
+# Perform basic operations
+mean = np.mean(array)
+sum_ = np.sum(array)
+
+print("Mean:", mean)  # Output: Mean: 3.0
+print("Sum:", sum_)   # Output: Sum: 15
+            </code></pre>
+
+            <h3>Popular Python Frameworks</h3>
+            <ul>
+                <li><strong>Django:</strong> A high-level web framework for building robust and scalable web applications.</li>
+                <li><strong>Flask:</strong> A micro web framework that is lightweight and easy to use for small to medium applications.</li>
+                <li><strong>FastAPI:</strong> A modern, fast (high-performance) web framework for building APIs with Python 3.6+ based on standard Python type hints.</li>
+                <li><strong>Pyramid:</strong> A flexible framework for developing web applications with a focus on simplicity and scalability.</li>
+            </ul>
+
+            <h3>Using Frameworks</h3>
+            <p>Frameworks provide structure to your applications and often include tools for handling common tasks. For example, to start a new Django project, you can use:</p>
+            <pre><code>
+django-admin startproject myproject
+            </code></pre>
+            <p>To create a new Flask application, you can start with:</p>
+            <pre><code>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run()
+            </code></pre>
+
+            <h3>Resources</h3>
+            <p>Here are some resources to help you get started with Python libraries and frameworks:</p>
+            <ul>
+                <li><a href="https://numpy.org/">NumPy Documentation</a></li>
+                <li><a href="https://pandas.pydata.org/">Pandas Documentation</a></li>
+                <li><a href="https://matplotlib.org/">Matplotlib Documentation</a></li>
+                <li><a href="https://requests.readthedocs.io/">Requests Documentation</a></li>
+                <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup Documentation</a></li>
+                <li><a href="https://www.djangoproject.com/">Django Documentation</a></li>
+                <li><a href="https://flask.palletsprojects.com/">Flask Documentation</a></li>
+                <li><a href="https://fastapi.tiangolo.com/">FastAPI Documentation</a></li>
+                <li><a href="https://trypyramid.com/">Pyramid Documentation</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

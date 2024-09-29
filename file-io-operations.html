@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course - File I/O Operations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>File I/O Operations</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>File I/O Operations</h2>
+            <p>File Input/Output (I/O) operations in C allow you to read from and write to files. This is essential for handling data storage and retrieval. This section covers the basics of file I/O operations.</p>
+
+            <h3>Opening and Closing Files</h3>
+            <p>Files are accessed using file pointers. The functions <code>fopen</code> and <code>fclose</code> are used to open and close files, respectively.</p>
+
+            <h4>Opening a File</h4>
+            <p>Use the <code>fopen</code> function to open a file. You can specify the mode for opening the file (e.g., read, write, append).</p>
+            <pre><code>FILE *file_pointer;
+file_pointer = fopen("filename.txt", "r"); // Open for reading
+file_pointer = fopen("filename.txt", "w"); // Open for writing
+file_pointer = fopen("filename.txt", "a"); // Open for appending
+</code></pre>
+
+            <h4>Closing a File</h4>
+            <p>Use the <code>fclose</code> function to close an open file.</p>
+            <pre><code>fclose(file_pointer);
+</code></pre>
+
+            <h3>Reading from and Writing to Files</h3>
+            <p>After opening a file, you can read from or write to it using various functions.</p>
+
+            <h4>Writing to a File</h4>
+            <p>Use <code>fprintf</code> to write formatted text to a file and <code>fwrite</code> to write binary data.</p>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *file_pointer = fopen("output.txt", "w");
+    if (file_pointer == NULL) {
+        printf("Error opening file\n");
+        return 1;
+    }
+
+    fprintf(file_pointer, "Hello, File I/O!\n");
+    fclose(file_pointer);
+
+    return 0;
+}
+</code></pre>
+
+            <h4>Reading from a File</h4>
+            <p>Use <code>fscanf</code> to read formatted text and <code>fread</code> to read binary data.</p>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *file_pointer = fopen("output.txt", "r");
+    char buffer[100];
+
+    if (file_pointer == NULL) {
+        printf("Error opening file\n");
+        return 1;
+    }
+
+    while (fgets(buffer, sizeof(buffer), file_pointer) != NULL) {
+        printf("%s", buffer);
+    }
+
+    fclose(file_pointer);
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Error Handling</h3>
+            <p>It is important to handle errors when performing file operations. Check if the file pointer is <code>NULL</code> to ensure that the file was opened successfully.</p>
+
+            <h4>Example</h4>
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *file_pointer = fopen("nonexistent.txt", "r");
+    if (file_pointer == NULL) {
+        perror("Error");
+        return 1;
+    }
+
+    // File operations here
+
+    fclose(file_pointer);
+
+    return 0;
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

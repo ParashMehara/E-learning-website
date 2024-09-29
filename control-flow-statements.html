@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow Statements - Python Programming Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Control Flow Statements</h1>
+    </header>
+
+    <main>
+        <section id="control-flow-statements">
+            <h2>Control Flow Statements</h2>
+            <p>Control flow statements are used to control the execution flow of a program. They allow you to make decisions, repeat tasks, and branch your code. In this section, we will cover the following control flow statements:</p>
+            <ul>
+                <li>Conditional Statements</li>
+                <li>Loops</li>
+                <li>Control Flow Tools</li>
+            </ul>
+
+            <h3>Conditional Statements</h3>
+            <p>Conditional statements are used to execute code based on certain conditions. The most common conditional statements in Python are:</p>
+            <ul>
+                <li><code>if</code> statement</li>
+                <li><code>if...else</code> statement</li>
+                <li><code>if...elif...else</code> statement</li>
+            </ul>
+
+            <h4><code>if</code> Statement</h4>
+            <pre><code>
+x = 10
+if x > 5:
+    print("x is greater than 5")
+            </code></pre>
+
+            <h4><code>if...else</code> Statement</h4>
+            <pre><code>
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+            </code></pre>
+
+            <h4><code>if...elif...else</code> Statement</h4>
+            <pre><code>
+x = 10
+if x > 15:
+    print("x is greater than 15")
+elif x > 5:
+    print("x is greater than 5 but less than or equal to 15")
+else:
+    print("x is less than or equal to 5")
+            </code></pre>
+
+            <h3>Loops</h3>
+            <p>Loops are used to repeat a block of code multiple times. The most common loops in Python are:</p>
+            <ul>
+                <li><code>for</code> loop</li>
+                <li><code>while</code> loop</li>
+            </ul>
+
+            <h4><code>for</code> Loop</h4>
+            <p>The <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, string, or range).</p>
+            <pre><code>
+# Iterating over a list
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    print(num)
+
+# Iterating over a range
+for i in range(5):
+    print(i)
+            </code></pre>
+
+            <h4><code>while</code> Loop</h4>
+            <p>The <code>while</code> loop is used to execute a block of code as long as a condition is true.</p>
+            <pre><code>
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+            </code></pre>
+
+            <h3>Control Flow Tools</h3>
+            <p>Python provides several tools to control the flow of a loop:</p>
+            <ul>
+                <li><code>break</code> statement</li>
+                <li><code>continue</code> statement</li>
+                <li><code>pass</code> statement</li>
+            </ul>
+
+            <h4><code>break</code> Statement</h4>
+            <p>The <code>break</code> statement is used to exit a loop prematurely.</p>
+            <pre><code>
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+            </code></pre>
+
+            <h4><code>continue</code> Statement</h4>
+            <p>The <code>continue</code> statement is used to skip the rest of the code inside a loop for the current iteration and continue with the next iteration.</p>
+            <pre><code>
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
+            </code></pre>
+
+            <h4><code>pass</code> Statement</h4>
+            <p>The <code>pass</code> statement is a null operation. It is used when a statement is required syntactically but you do not want any command or code to execute.</p>
+            <pre><code>
+for i in range(10):
+    pass  # This loop does nothing
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Python Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>
