@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Inheritance and Polymorphism</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Inheritance and Polymorphis</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Inheritance and Polymorphism</h2>
+            <p>Inheritance and polymorphism are two fundamental concepts in object-oriented programming. They allow you to build more complex systems by extending and modifying existing classes.</p>
+
+            <h3>Inheritance</h3>
+            <p>Inheritance is a mechanism where a new class derives properties and behaviors from an existing class. The existing class is called the base class, and the new class is called the derived class. Inheritance allows you to reuse code and create a hierarchical relationship between classes.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Animal {
+public:
+    void eat() {
+        std::cout &lt;&lt; "Animal eats." &lt;&lt; std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        std::cout &lt;&lt; "Dog barks." &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat(); // Inherited method
+    myDog.bark(); // Derived class method
+    return 0;
+}
+</code></pre>
+
+            <h3>Access Specifiers in Inheritance</h3>
+            <p>Access specifiers determine how the members of the base class are inherited by the derived class. The main access specifiers are <code>public</code>, <code>protected</code>, and <code>private</code>:</p>
+            <ul>
+                <li><strong>Public Inheritance:</strong> Public and protected members of the base class remain public and protected in the derived class.</li>
+                <li><strong>Protected Inheritance:</strong> Public and protected members of the base class become protected in the derived class.</li>
+                <li><strong>Private Inheritance:</strong> Public and protected members of the base class become private in the derived class.</li>
+            </ul>
+
+            <h3>Polymorphism</h3>
+            <p>Polymorphism allows objects of different derived classes to be treated as objects of a common base class. It enables the same function to perform different actions based on the type of object that is calling it.</p>
+            <h4>Compile-Time Polymorphism (Function Overloading)</h4>
+            <p>Function overloading allows multiple functions with the same name but different parameters to coexist. The compiler determines which function to call based on the arguments passed.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Printer {
+public:
+    void print(int i) {
+        std::cout &lt;&lt; "Printing integer: " &lt;&lt; i &lt;&lt; std::endl;
+    }
+
+    void print(double d) {
+        std::cout &lt;&lt; "Printing double: " &lt;&lt; d &lt;&lt; std::endl;
+    }
+
+    void print(const std::string &s) {
+        std::cout &lt;&lt; "Printing string: " &lt;&lt; s &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Printer p;
+    p.print(10);
+    p.print(3.14);
+    p.print("Hello");
+    return 0;
+}
+</code></pre>
+
+            <h4>Run-Time Polymorphism (Virtual Functions)</h4>
+            <p>Run-time polymorphism is achieved through virtual functions. A virtual function is declared in the base class and overridden in the derived class. The function that gets called is determined at run time based on the type of object pointed to by the base class pointer.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Base {
+public:
+    virtual void show() {
+        std::cout &lt;&lt; "Base class show function." &lt;&lt; std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        std::cout &lt;&lt; "Derived class show function." &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Base* bPtr;
+    Derived d;
+    bPtr = &d;
+    bPtr-&gt;show(); // Calls Derived's show() due to virtual function
+    return 0;
+}
+</code></pre>
+
+            <h3>Conclusion</h3>
+            <p>Inheritance and polymorphism are powerful features in C++ that facilitate code reuse and flexibility. Understanding these concepts will enable you to design and implement more complex and modular systems.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

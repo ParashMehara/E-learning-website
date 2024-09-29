@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Introduction to C++</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Introduction to C++</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Introduction to C++</h2>
+            <p>C++ is a general-purpose programming language that supports object-oriented, procedural, and generic programming. It is widely used for developing system/software applications, game development, and high-performance computing.</p>
+
+            <h3>History and Overview</h3>
+            <p>C++ was developed by Bjarne Stroustrup as an enhancement to the C programming language. It was designed to provide better control over system resources and memory, while still offering high-level features for easier programming.</p>
+
+            <h3>Basic Syntax</h3>
+            <p>C++ shares many syntactical elements with C, including the use of semicolons to end statements and curly braces to define code blocks. Here is a basic example of a C++ program:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, C++!" &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+            <h4>Key Components</h4>
+            <ul>
+                <li><strong>Header Files:</strong> These files contain declarations of functions and classes. For example, <code>&lt;iostream&gt;</code> is used for input and output operations.</li>
+                <li><strong>Main Function:</strong> The <code>main</code> function is the entry point of a C++ program. It must return an integer.</li>
+                <li><strong>Namespaces:</strong> C++ uses namespaces to avoid naming conflicts. The standard namespace is <code>std</code>, which includes common functions and objects like <code>cout</code> and <code>endl</code>.</li>
+            </ul>
+
+            <h3>Compiling and Running C++ Programs</h3>
+            <p>To compile and run a C++ program, use a compiler like <code>g++</code> for GNU or <code>clang++</code> for Clang. Here is an example command for compiling a file named <code>example.cpp</code>:</p>
+            <pre><code>g++ example.cpp -o example
+./example
+</code></pre>
+
+            <h3>Basic Input and Output</h3>
+            <p>C++ uses <code>iostream</code> for standard input and output. The <code>cout</code> object is used for output, and <code>cin</code> is used for input.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    int age;
+    std::cout &lt;&lt; "Enter your age: ";
+    std::cin &gt;&gt; age;
+    std::cout &lt;&lt; "You are " &lt;&lt; age &lt;&lt; " years old." &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+            <h3>Conclusion</h3>
+            <p>This introductory section covers the basics of C++ programming. As you advance, you'll learn about more complex topics such as object-oriented programming, templates, and the Standard Template Library (STL).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

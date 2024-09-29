@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Exception Handling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Exception Handling</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Exception Handling</h2>
+            <p>Exception handling in C++ provides a way to react to exceptional circumstances (like runtime errors) in programs. It allows you to manage errors gracefully and maintain normal program flow even when an error occurs.</p>
+
+            <h3>Basics of Exception Handling</h3>
+            <p>C++ uses three main keywords for exception handling:</p>
+            <ul>
+                <li><strong>try:</strong> Used to define a block of code where exceptions might occur.</li>
+                <li><strong>catch:</strong> Used to define a block of code that handles exceptions thrown by the <code>try</code> block.</li>
+                <li><strong>throw:</strong> Used to throw an exception when an error condition is detected.</li>
+            </ul>
+
+            <h4>Example of Exception Handling</h4>
+            <p>Here's a simple example that demonstrates how to use these keywords to handle exceptions:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+void divide(int a, int b) {
+    if (b == 0) {
+        throw std::runtime_error("Division by zero error");
+    }
+    std::cout &lt;&lt; "Result: " &lt;&lt; (a / b) &lt;&lt; std::endl;
+}
+
+int main() {
+    try {
+        divide(10, 2); // This will work
+        divide(10, 0); // This will throw an exception
+    } catch (const std::runtime_error &e) {
+        std::cerr &lt;&lt; "Caught an exception: " &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Exception Classes</h3>
+            <p>In C++, you can define your own exception classes by inheriting from the <code>std::exception</code> class. This allows you to create custom exceptions with additional information:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;exception&gt;
+
+class MyException : public std::exception {
+private:
+    std::string message;
+public:
+    MyException(const std::string &msg) : message(msg) {}
+
+    virtual const char* what() const noexcept {
+        return message.c_str();
+    }
+};
+
+void riskyOperation() {
+    throw MyException("Something went wrong in riskyOperation");
+}
+
+int main() {
+    try {
+        riskyOperation();
+    } catch (const MyException &e) {
+        std::cerr &lt;&lt; "Caught custom exception: " &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Best Practices for Exception Handling</h3>
+            <ul>
+                <li><strong>Use exceptions for exceptional conditions:</strong> Do not use exceptions for routine control flow.</li>
+                <li><strong>Catch exceptions by reference:</strong> Catch exceptions by reference to avoid object slicing and unnecessary copies.</li>
+                <li><strong>Provide meaningful exception messages:</strong> Include descriptive messages to help diagnose the problem.</li>
+                <li><strong>Ensure exceptions do not leave resources in an invalid state:</strong> Use RAII (Resource Acquisition Is Initialization) or smart pointers to manage resources automatically.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Exception handling is a crucial part of robust C++ programming. By properly using <code>try</code>, <code>catch</code>, and <code>throw</code>, along with custom exception classes, you can handle errors effectively and keep your program running smoothly even in the face of unexpected situations.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

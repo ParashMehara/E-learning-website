@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Transaction Management</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Transaction Management</h2>
+            <p>Transaction management is a fundamental aspect of database systems, ensuring data integrity and consistency. A transaction is a sequence of one or more SQL operations treated as a single logical unit of work. Transactions follow the ACID properties to maintain database reliability.</p>
+        </section>
+        <section>
+            <h2>ACID Properties</h2>
+            <p>The ACID properties are essential for maintaining the consistency and reliability of a database during transactions:</p>
+            <ul>
+                <li><strong>Atomicity:</strong> Ensures that all operations within a transaction are completed successfully. If any operation fails, the entire transaction is rolled back, leaving the database in its previous state.</li>
+                <li><strong>Consistency:</strong> Ensures that a transaction transforms the database from one valid state to another, maintaining data integrity constraints.</li>
+                <li><strong>Isolation:</strong> Ensures that the operations of one transaction are isolated from the operations of other concurrent transactions, preventing interference.</li>
+                <li><strong>Durability:</strong> Ensures that once a transaction is committed, its changes are permanently recorded in the database, even in the event of a system failure.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Transaction States</h2>
+            <p>Transactions typically go through several states during their lifecycle:</p>
+            <ul>
+                <li><strong>Active:</strong> The transaction is currently executing and has not yet completed.</li>
+                <li><strong>Partially Committed:</strong> The transaction has completed its final operation but has not yet been committed to the database.</li>
+                <li><strong>Committed:</strong> The transaction has been successfully committed, and its changes are now permanent.</li>
+                <li><strong>Failed:</strong> The transaction has encountered an error and cannot proceed.</li>
+                <li><strong>Aborted:</strong> The transaction has been rolled back due to a failure, and the database is restored to its previous state.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Transaction Control Statements</h2>
+            <p>SQL provides several statements for controlling transactions:</p>
+            <ul>
+                <li><strong>BEGIN TRANSACTION:</strong> Starts a new transaction.</li>
+                <li><strong>COMMIT:</strong> Commits the current transaction, making all changes permanent.</li>
+                <li><strong>ROLLBACK:</strong> Rolls back the current transaction, undoing all changes made during the transaction.</li>
+                <li><strong>SAVEPOINT:</strong> Sets a savepoint within a transaction to which you can later roll back.</li>
+                <li><strong>RELEASE SAVEPOINT:</strong> Removes a previously set savepoint, making it unavailable for future rollbacks.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Concurrency Control</h2>
+            <p>Concurrency control mechanisms are used to ensure the isolation property of transactions. They manage the simultaneous execution of transactions to prevent conflicts and ensure data consistency. Common concurrency control techniques include:</p>
+            <ul>
+                <li><strong>Locking:</strong> Prevents multiple transactions from accessing the same data simultaneously, reducing the risk of conflicts.</li>
+                <li><strong>Timestamp Ordering:</strong> Assigns timestamps to transactions to ensure they are executed in a specific order, preventing conflicts.</li>
+                <li><strong>Multiversion Concurrency Control (MVCC):</strong> Maintains multiple versions of data to allow transactions to access different versions without conflicts.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Isolation Levels</h2>
+            <p>Isolation levels define the degree to which transactions are isolated from each other. They balance the trade-off between consistency and performance. Common isolation levels include:</p>
+            <ul>
+                <li><strong>Read Uncommitted:</strong> Allows transactions to read uncommitted changes from other transactions, leading to potential inconsistencies.</li>
+                <li><strong>Read Committed:</strong> Ensures transactions only read committed changes, reducing inconsistencies but still allowing non-repeatable reads.</li>
+                <li><strong>Repeatable Read:</strong> Ensures transactions see the same data throughout their execution, preventing non-repeatable reads but still allowing phantom reads.</li>
+                <li><strong>Serializable:</strong> Provides the highest level of isolation by ensuring transactions are executed serially, preventing all types of inconsistencies.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>Transaction management is crucial for maintaining data integrity and consistency in database systems. By understanding and applying the principles of ACID properties, concurrency control, and isolation levels, database administrators can ensure reliable and efficient transaction processing.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

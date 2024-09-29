@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Classes and Objects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Classes and Objects</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Classes and Objects</h2>
+            <p>In C++, classes and objects are fundamental concepts of object-oriented programming (OOP). They allow you to define custom data types and create instances of those types.</p>
+
+            <h3>Introduction to Classes</h3>
+            <p>A class is a blueprint for creating objects. It encapsulates data and functions that operate on the data. Here is a basic example of a class definition:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Car {
+public:
+    std::string brand;
+    int year;
+
+    void display() {
+        std::cout &lt;&lt; "Brand: " &lt;&lt; brand &lt;&lt; ", Year: " &lt;&lt; year &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.brand = "Toyota";
+    myCar.year = 2020;
+    myCar.display();
+    return 0;
+}
+</code></pre>
+
+            <h3>Class Members</h3>
+            <ul>
+                <li><strong>Data Members:</strong> Variables defined inside a class that hold data.</li>
+                <li><strong>Member Functions:</strong> Functions defined inside a class that operate on data members.</li>
+                <li><strong>Access Specifiers:</strong> Control the accessibility of class members. The main specifiers are <code>public</code>, <code>protected</code>, and <code>private</code>.</li>
+            </ul>
+
+            <h3>Objects and Instantiation</h3>
+            <p>An object is an instance of a class. You can create objects by using the class name followed by the object name. Here’s how you can instantiate and use objects:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Person {
+public:
+    std::string name;
+    int age;
+
+    void introduce() {
+        std::cout &lt;&lt; "Hi, I am " &lt;&lt; name &lt;&lt; " and I am " &lt;&lt; age &lt;&lt; " years old." &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Person person1;
+    person1.name = "Alice";
+    person1.age = 30;
+    person1.introduce();
+
+    Person person2;
+    person2.name = "Bob";
+    person2.age = 25;
+    person2.introduce();
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Constructors and Destructors</h3>
+            <p>Constructors are special member functions that are automatically called when an object is created. Destructors are called when an object is destroyed. They help in initializing and cleaning up resources, respectively.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+class Rectangle {
+public:
+    int width, height;
+
+    // Constructor
+    Rectangle(int w, int h) : width(w), height(h) {}
+
+    // Destructor
+    ~Rectangle() {
+        std::cout &lt;&lt; "Rectangle object is being destroyed." &lt;&lt; std::endl;
+    }
+
+    int area() {
+        return width * height;
+    }
+};
+
+int main() {
+    Rectangle rect(10, 5);
+    std::cout &lt;&lt; "Area of rectangle: " &lt;&lt; rect.area() &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+            <h3>Inheritance and Polymorphism</h3>
+            <p>Inheritance allows a class to inherit properties and behaviors from another class. Polymorphism enables one interface to be used for a general class of actions. We will explore these advanced topics in later sections.</p>
+
+            <h3>Conclusion</h3>
+            <p>Understanding classes and objects is crucial for mastering C++ and object-oriented programming. These concepts form the foundation for creating more complex programs and systems.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

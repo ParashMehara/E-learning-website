@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Course - Object-Oriented Programming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Object-Oriented Programming</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Object-Oriented Programming</h2>
+            <p>Object-Oriented Programming (OOP) is a programming paradigm that uses "objects" to model real-world entities. In Java, everything revolves around objects and classes. This section covers the core concepts of OOP and how they are implemented in Java.</p>
+
+            <h3>1. Classes and Objects</h3>
+            <p>In Java, a class is a blueprint for creating objects. An object is an instance of a class. Classes encapsulate data for the object and methods to manipulate that data.</p>
+            
+            <h4>Defining a Class</h4>
+            <p>Here's an example of how to define a class in Java:</p>
+            <pre><code>public class Car {
+    // Attributes
+    String color;
+    String model;
+
+    // Constructor
+    public Car(String color, String model) {
+        this.color = color;
+        this.model = model;
+    }
+
+    // Method
+    public void displayInfo() {
+        System.out.println("Model: " + model + ", Color: " + color);
+    }
+}
+</code></pre>
+
+            <h4>Creating an Object</h4>
+            <p>Once you have a class, you can create objects of that class:</p>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Car class
+        Car myCar = new Car("Red", "Toyota");
+        myCar.displayInfo();
+    }
+}
+</code></pre>
+
+            <h3>2. Inheritance</h3>
+            <p>Inheritance is a mechanism where a new class derives properties and behavior (methods) from an existing class. The class that is inherited from is called the superclass, and the class that inherits is called the subclass.</p>
+            
+            <h4>Defining a Subclass</h4>
+            <p>Here's an example of how to use inheritance in Java:</p>
+            <pre><code>public class ElectricCar extends Car {
+    // Additional attribute
+    int batteryCapacity;
+
+    // Constructor
+    public ElectricCar(String color, String model, int batteryCapacity) {
+        super(color, model);
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    // Method
+    public void displayBatteryInfo() {
+        System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
+    }
+}
+</code></pre>
+
+            <h4>Using the Subclass</h4>
+            <p>Creating an object of the subclass:</p>
+            <pre><code>public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the ElectricCar class
+        ElectricCar myElectricCar = new ElectricCar("Blue", "Tesla", 75);
+        myElectricCar.displayInfo();
+        myElectricCar.displayBatteryInfo();
+    }
+}
+</code></pre>
+
+            <h3>3. Polymorphism</h3>
+            <p>Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. It is achieved through method overriding and method overloading.</p>
+
+            <h4>Method Overriding</h4>
+            <p>Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass:</p>
+            <pre><code>public class Car {
+    public void start() {
+        System.out.println("Car is starting");
+    }
+}
+
+public class ElectricCar extends Car {
+    @Override
+    public void start() {
+        System.out.println("Electric car is starting silently");
+    }
+}
+</code></pre>
+
+            <h4>Method Overloading</h4>
+            <p>Method overloading allows multiple methods with the same name but different parameters within the same class:</p>
+            <pre><code>public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+</code></pre>
+
+            <h3>4. Encapsulation</h3>
+            <p>Encapsulation is the practice of wrapping the data (attributes) and code (methods) together as a single unit. It helps to protect the data by restricting direct access to it and exposing only necessary methods.</p>
+            
+            <h4>Using Encapsulation</h4>
+            <p>Here's an example of encapsulation in Java:</p>
+            <pre><code>public class Person {
+    // Private attributes
+    private String name;
+    private int age;
+
+    // Public getter and setter methods
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+</code></pre>
+
+            <h3>5. Conclusion</h3>
+            <p>Object-Oriented Programming is a powerful paradigm that helps in creating organized, modular, and reusable code. By mastering OOP principles like classes, objects, inheritance, polymorphism, and encapsulation, you can develop more robust and maintainable Java applications.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Java Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

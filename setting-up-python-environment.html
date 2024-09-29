@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Setting Up Your Python Environment - Machine Learning with Python Course">
+    <title>Setting Up Your Python Environment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning with Python</h1>
+    </header>
+
+    <main>
+        <section id="setup-python-environment">
+            <h2>Setting Up Your Python Environment</h2>
+            <p>To get started with machine learning, it's important to have a properly configured Python environment. In this section, we will guide you through the process of setting up your Python environment, installing the necessary libraries, and configuring tools that will make your development experience smoother and more productive.</p>
+
+            <h3>1. Installing Python</h3>
+            <p>Before you begin working with Python for machine learning, you need to have Python installed on your system. To install Python:</p>
+            <ul>
+                <li>
+                    <p>Visit the official <a href="https://www.python.org/downloads/" target="_blank">Python website</a> and download the latest version of Python.</p>
+                </li>
+                <li>
+                    <p>Once the installer is downloaded, run it and follow the on-screen instructions. Make sure to check the box that says "Add Python to PATH" during installation.</p>
+                </li>
+                <li>
+                    <p>Verify the installation by opening your command prompt or terminal and typing <code>python --version</code>. You should see the installed Python version displayed.</p>
+                </li>
+            </ul>
+
+            <h3>2. Installing an Integrated Development Environment (IDE)</h3>
+            <p>An IDE is essential for writing, testing, and debugging your Python code. We recommend using one of the following IDEs:</p>
+            <ul>
+                <li>
+                    <strong>PyCharm:</strong> A popular IDE with a variety of tools and plugins that simplify Python development. Download it from the <a href="https://www.jetbrains.com/pycharm/download/" target="_blank">PyCharm website</a>.</li>
+                <li>
+                    <strong>Visual Studio Code (VS Code):</strong> A lightweight and highly customizable editor. Download it from the <a href="https://code.visualstudio.com/" target="_blank">VS Code website</a>.</li>
+                <li>
+                    <strong>Jupyter Notebook:</strong> A web-based interactive computing environment. Install it by running <code>pip install jupyter</code> in your command prompt or terminal.</li>
+            </ul>
+
+            <h3>3. Setting Up a Virtual Environment</h3>
+            <p>A virtual environment helps you create isolated environments for different projects, avoiding conflicts between dependencies. To create a virtual environment:</p>
+            <ol>
+                <li>
+                    <p>Open your command prompt or terminal and navigate to your project directory.</p>
+                </li>
+                <li>
+                    <p>Create a virtual environment by running: <code>python -m venv myenv</code>. Replace <strong>myenv</strong> with the desired name for your virtual environment.</p>
+                </li>
+                <li>
+                    <p>Activate the virtual environment:</p>
+                    <ul>
+                        <li><strong>Windows:</strong> <code>myenv\Scripts\activate</code></li>
+                        <li><strong>Mac/Linux:</strong> <code>source myenv/bin/activate</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>After activation, you should see the virtual environment name in your command prompt or terminal. Now, any Python packages you install will be specific to this environment.</p>
+                </li>
+            </ol>
+
+            <h3>4. Installing Required Libraries</h3>
+            <p>There are several libraries that are essential for machine learning with Python. Some of the most commonly used ones are:</p>
+            <ul>
+                <li><code>numpy</code> - For numerical operations and array manipulation.</li>
+                <li><code>pandas</code> - For data manipulation and analysis.</li>
+                <li><code>matplotlib</code> - For creating static, animated, and interactive visualizations.</li>
+                <li><code>scikit-learn</code> - A comprehensive library for various machine learning algorithms and tools.</li>
+                <li><code>tensorflow</code> or <code>pytorch</code> - For deep learning applications.</li>
+            </ul>
+            <p>Install these libraries using the following command:</p>
+            <pre><code>pip install numpy pandas matplotlib scikit-learn tensorflow</code></pre>
+
+            <h3>5. Configuring Jupyter Notebook</h3>
+            <p>If you plan to use Jupyter Notebook, you can create a new Jupyter notebook by navigating to your project directory and running:</p>
+            <pre><code>jupyter notebook</code></pre>
+            <p>This will open a new tab in your browser with the Jupyter Notebook interface, where you can create new notebooks and start coding.</p>
+
+            <h3>6. Testing Your Environment</h3>
+            <p>To ensure that your environment is properly set up, try running the following Python code snippet in your IDE or Jupyter Notebook:</p>
+            <pre><code>
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+# Load Iris dataset
+data = load_iris()
+df = pd.DataFrame(data.data, columns=data.feature_names)
+
+# Display first 5 rows of the dataset
+print(df.head())
+
+# Plot a simple graph
+plt.plot(df['sepal length (cm)'], df['sepal width (cm)'], 'o')
+plt.xlabel('Sepal Length')
+plt.ylabel('Sepal Width')
+plt.title('Sepal Length vs. Sepal Width')
+plt.show()
+            </code></pre>
+            <p>If the code runs successfully and you see a plot of Sepal Length vs. Sepal Width, your environment is set up correctly!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

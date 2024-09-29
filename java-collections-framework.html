@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Course - Java Collections Framework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Java Collections Framework</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Java Collections Framework</h2>
+            <p>The Java Collections Framework provides a set of interfaces and classes for storing and manipulating groups of data. It includes structures like lists, sets, and maps, and supports various algorithms for processing collections.</p>
+
+            <h3>1. Introduction to Collections</h3>
+            <p>The Collections Framework is a unified architecture for representing and manipulating collections. It includes a set of interfaces, implementations, and algorithms that provide various functionalities for managing data.</p>
+            
+            <h4>Interfaces</h4>
+            <ul>
+                <li><strong>Collection</strong>: The root interface in the collection hierarchy. It is the most general form of a collection and includes most of the operations that can be performed on collections.</li>
+                <li><strong>List</strong>: An ordered collection that allows duplicate elements. Common implementations include `ArrayList` and `LinkedList`.</li>
+                <li><strong>Set</strong>: A collection that does not allow duplicate elements. Common implementations include `HashSet` and `TreeSet`.</li>
+                <li><strong>Map</strong>: A collection that maps keys to values. It does not allow duplicate keys. Common implementations include `HashMap` and `TreeMap`.</li>
+            </ul>
+
+            <h4>Implementations</h4>
+            <ul>
+                <li><strong>ArrayList</strong>: Implements the `List` interface. It provides a resizable array implementation and is generally preferred for most applications due to its efficiency in accessing elements.</li>
+                <li><strong>LinkedList</strong>: Implements the `List` and `Deque` interfaces. It provides a doubly-linked list implementation and is more efficient for inserting and removing elements compared to `ArrayList`.</li>
+                <li><strong>HashSet</strong>: Implements the `Set` interface. It uses a hash table for storage and provides constant-time performance for basic operations.</li>
+                <li><strong>TreeSet</strong>: Implements the `Set` interface. It uses a red-black tree and maintains elements in a sorted order.</li>
+                <li><strong>HashMap</strong>: Implements the `Map` interface. It uses a hash table and provides constant-time performance for basic operations.</li>
+                <li><strong>TreeMap</strong>: Implements the `Map` interface. It uses a red-black tree and maintains keys in a sorted order.</li>
+            </ul>
+
+            <h3>2. Working with Lists</h3>
+            <p>The `List` interface represents an ordered collection of elements. Here's how you can work with `ArrayList`:</p>
+            <pre><code>import java.util.ArrayList;
+import java.util.List;
+
+public class ListExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        System.out.println("List: " + list);
+        System.out.println("First Element: " + list.get(0));
+
+        list.remove("Python");
+        System.out.println("Updated List: " + list);
+    }
+}
+</code></pre>
+
+            <h3>3. Working with Sets</h3>
+            <p>The `Set` interface represents a collection that does not allow duplicate elements. Here's how you can work with `HashSet`:</p>
+            <pre><code>import java.util.HashSet;
+import java.util.Set;
+
+public class SetExample {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("Java");
+        set.add("Python");
+        set.add("C++");
+        set.add("Java"); // Duplicate element
+
+        System.out.println("Set: " + set);
+    }
+}
+</code></pre>
+
+            <h3>4. Working with Maps</h3>
+            <p>The `Map` interface represents a collection of key-value pairs. Here's how you can work with `HashMap`:</p>
+            <pre><code>import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("Java", "Programming Language");
+        map.put("Python", "Programming Language");
+        map.put("C++", "Programming Language");
+
+        System.out.println("Map: " + map);
+        System.out.println("Value for 'Java': " + map.get("Java"));
+
+        map.remove("Python");
+        System.out.println("Updated Map: " + map);
+    }
+}
+</code></pre>
+
+            <h3>5. Collections Utility Methods</h3>
+            <p>The `Collections` class provides static utility methods for various operations on collections:</p>
+            <pre><code>import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class CollectionsUtilityExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        Collections.sort(list);
+        System.out.println("Sorted List: " + list);
+    }
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Java Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

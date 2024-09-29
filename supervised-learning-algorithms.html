@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supervised Learning Algorithms - Machine Learning with Python Course">
+    <title>Supervised Learning Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning with Python</h1>
+    </header>
+
+    <main>
+        <section id="supervised-learning">
+            <h2>Supervised Learning Algorithms</h2>
+            <p>Supervised learning is one of the most widely used types of machine learning. It involves training a model using labeled data, where each input is paired with the corresponding output. The model learns to make predictions or classify data based on this training. In this section, we will explore some common supervised learning algorithms and understand their working principles.</p>
+            
+            <h3>1. What is Supervised Learning?</h3>
+            <p>In supervised learning, the algorithm is provided with a set of training examples where the input data is associated with known outputs. The goal of the model is to learn the relationship between inputs and outputs so that it can make accurate predictions on new, unseen data. There are two primary types of supervised learning problems:</p>
+            <ul>
+                <li><strong>Classification:</strong> The model is used to categorize inputs into distinct classes or categories. For example, classifying emails as "spam" or "not spam".</li>
+                <li><strong>Regression:</strong> The model is used to predict continuous values. For example, predicting the price of a house based on its features.</li>
+            </ul>
+
+            <h3>2. Common Supervised Learning Algorithms</h3>
+            <p>There are several algorithms used in supervised learning, each with its own strengths and weaknesses. Below are some of the most common supervised learning algorithms:</p>
+
+            <h4>2.1. Linear Regression</h4>
+            <p>Linear Regression is a regression algorithm used to predict a continuous target variable. It assumes a linear relationship between the input features and the output variable. The goal is to find the best-fit line that minimizes the sum of squared errors between the predicted and actual values.</p>
+            <pre><code>from sklearn.linear_model import LinearRegression
+
+# Create a linear regression model
+model = LinearRegression()
+model.fit(X_train, y_train)</code></pre>
+            <p>Linear Regression is simple to implement and interpret, making it a good starting point for regression problems.</p>
+
+            <h4>2.2. Logistic Regression</h4>
+            <p>Logistic Regression is a classification algorithm used for binary classification problems (i.e., where the target variable has two categories). It models the probability of the default class (usually 1) using a logistic function.</p>
+            <pre><code>from sklearn.linear_model import LogisticRegression
+
+# Create a logistic regression model
+model = LogisticRegression()
+model.fit(X_train, y_train)</code></pre>
+            <p>Although its name includes "regression", Logistic Regression is widely used for classification problems such as predicting whether a customer will purchase a product or not.</p>
+
+            <h4>2.3. Decision Trees</h4>
+            <p>Decision Trees are versatile algorithms that can be used for both classification and regression tasks. They work by splitting the data into subsets based on the most significant feature at each node, forming a tree-like structure. Each node represents a decision based on a feature, and each leaf node represents an outcome or class.</p>
+            <pre><code>from sklearn.tree import DecisionTreeClassifier
+
+# Create a decision tree classifier
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)</code></pre>
+            <p>Decision Trees are easy to visualize and understand, but they are prone to overfitting if not properly controlled with hyperparameters like maximum depth and minimum samples per leaf.</p>
+
+            <h4>2.4. Support Vector Machines (SVM)</h4>
+            <p>Support Vector Machines are powerful classification algorithms that find the optimal hyperplane to separate different classes. SVMs maximize the margin between the nearest data points of different classes, known as support vectors. They can handle both linear and non-linear classification using kernel functions.</p>
+            <pre><code>from sklearn.svm import SVC
+
+# Create an SVM classifier
+model = SVC(kernel='linear')
+model.fit(X_train, y_train)</code></pre>
+            <p>SVMs are effective in high-dimensional spaces and are commonly used for text classification, image recognition, and more.</p>
+
+            <h4>2.5. K-Nearest Neighbors (KNN)</h4>
+            <p>K-Nearest Neighbors is a simple classification algorithm that classifies a data point based on the majority class of its k-nearest neighbors. It works by calculating the distance between points and assigning the class of the majority neighbors.</p>
+            <pre><code>from sklearn.neighbors import KNeighborsClassifier
+
+# Create a KNN classifier
+model = KNeighborsClassifier(n_neighbors=5)
+model.fit(X_train, y_train)</code></pre>
+            <p>KNN is intuitive and easy to implement but can be computationally expensive for large datasets, as it requires calculating distances for each prediction.</p>
+
+            <h4>2.6. Naive Bayes</h4>
+            <p>Naive Bayes is a probabilistic classifier based on Bayes' theorem, assuming that features are independent given the class. Despite this assumption being rarely true in practice, Naive Bayes performs well for many real-world problems, especially text classification.</p>
+            <pre><code>from sklearn.naive_bayes import GaussianNB
+
+# Create a Naive Bayes classifier
+model = GaussianNB()
+model.fit(X_train, y_train)</code></pre>
+            <p>Naive Bayes is fast and requires a small amount of training data, making it suitable for applications like spam detection and sentiment analysis.</p>
+
+            <h4>2.7. Random Forest</h4>
+            <p>Random Forest is an ensemble learning method that combines multiple decision trees to improve the overall performance. Each tree is trained on a random subset of the data, and the final prediction is made by averaging the predictions of all trees (for regression) or taking the majority vote (for classification).</p>
+            <pre><code>from sklearn.ensemble import RandomForestClassifier
+
+# Create a random forest classifier
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)</code></pre>
+            <p>Random Forests are robust to overfitting, handle missing values well, and provide feature importance scores, making them suitable for a wide range of tasks.</p>
+
+            <h3>3. Choosing the Right Algorithm</h3>
+            <p>Choosing the right algorithm depends on the nature of the problem, the size of the dataset, and the computational resources available. Some algorithms like Linear Regression and Logistic Regression are easy to implement and interpret but may not perform well on complex data. On the other hand, complex algorithms like Random Forests and Support Vector Machines provide better accuracy but may be harder to tune and interpret.</p>
+
+            <h3>4. Evaluating Supervised Learning Models</h3>
+            <p>After selecting an algorithm, it is essential to evaluate its performance using metrics like accuracy, precision, recall, F1 score, and ROC-AUC curve. Cross-validation techniques such as k-fold cross-validation can also be used to assess model stability and generalization.</p>
+
+            <h3>5. Final Thoughts on Supervised Learning</h3>
+            <p>Supervised learning algorithms are powerful tools for tackling a wide range of predictive modeling tasks. By understanding the strengths and weaknesses of different algorithms, you can choose the right approach for your problem and achieve optimal results. Experimenting with different algorithms and fine-tuning their hyperparameters can lead to improved performance and better insights into the data.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

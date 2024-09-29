@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Preprocessing - Machine Learning with Python Course">
+    <title>Data Preprocessing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning with Python</h1>
+    </header>
+
+    <main>
+        <section id="data-preprocessing">
+            <h2>Data Preprocessing</h2>
+            <p>Data preprocessing is a crucial step in any machine learning project. It involves cleaning, transforming, and organizing raw data to make it suitable for modeling. Proper data preprocessing can significantly improve the performance of your machine learning algorithms by enhancing data quality and making patterns more discernible.</p>
+            
+            <h3>1. Understanding the Need for Data Preprocessing</h3>
+            <p>Raw data often contains noise, missing values, and inconsistencies that can hinder the learning process. Data preprocessing helps mitigate these issues by preparing the data in a way that maximizes the effectiveness of machine learning models. The main goals of data preprocessing include:</p>
+            <ul>
+                <li>Handling missing values</li>
+                <li>Removing outliers</li>
+                <li>Encoding categorical variables</li>
+                <li>Scaling and normalization</li>
+                <li>Splitting data into training and testing sets</li>
+            </ul>
+
+            <h3>2. Loading the Dataset</h3>
+            <p>To begin data preprocessing, you first need to load your dataset. In Python, this is commonly done using the <code>pandas</code> library, which provides data structures like DataFrames to handle and manipulate data efficiently.</p>
+            <pre><code>import pandas as pd
+
+# Load dataset
+data = pd.read_csv('data.csv')
+print(data.head())</code></pre>
+            <p>This code snippet reads a CSV file named <strong>data.csv</strong> and prints the first few rows of the dataset to help you understand its structure.</p>
+
+            <h3>3. Handling Missing Values</h3>
+            <p>Missing values can introduce bias into the model and reduce its accuracy. There are several strategies to handle missing values:</p>
+            <ul>
+                <li>
+                    <strong>Remove missing values:</strong> If the number of missing values is small, you can remove the rows or columns containing them.
+                    <pre><code>data.dropna(inplace=True)</code></pre>
+                </li>
+                <li>
+                    <strong>Fill missing values:</strong> Replace missing values with the mean, median, or a fixed value.
+                    <pre><code>data.fillna(data.mean(), inplace=True)</code></pre>
+                </li>
+                <li>
+                    <strong>Imputation:</strong> Use more advanced techniques like K-Nearest Neighbors (KNN) or regression to predict missing values.</li>
+            </ul>
+
+            <h3>4. Removing Outliers</h3>
+            <p>Outliers can distort the learning process by skewing the results. You can identify and remove outliers using statistical methods or visualization techniques like box plots.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Box plot to visualize outliers
+plt.boxplot(data['column_name'])
+plt.title('Box Plot for Column')
+plt.show()</code></pre>
+            <p>If you identify any outliers, you can remove them by filtering the DataFrame:</p>
+            <pre><code>data = data[data['column_name'] < threshold]</code></pre>
+            <p>Replace <strong>column_name</strong> and <strong>threshold</strong> with your specific column name and threshold value.</p>
+
+            <h3>5. Encoding Categorical Variables</h3>
+            <p>Machine learning algorithms work better with numerical data. If your dataset contains categorical variables (e.g., "Male", "Female"), you need to encode them into numerical format. Common encoding techniques include:</p>
+            <ul>
+                <li>
+                    <strong>Label Encoding:</strong> Assigns a unique integer to each category.
+                    <pre><code>from sklearn.preprocessing import LabelEncoder
+
+# Label encode categorical column
+le = LabelEncoder()
+data['category_column'] = le.fit_transform(data['category_column'])</code></pre>
+                </li>
+                <li>
+                    <strong>One-Hot Encoding:</strong> Creates a new binary column for each category.
+                    <pre><code>data = pd.get_dummies(data, columns=['category_column'])</code></pre>
+                </li>
+            </ul>
+
+            <h3>6. Feature Scaling and Normalization</h3>
+            <p>Feature scaling ensures that all features contribute equally to the model by scaling them to a common range, such as 0 to 1. Normalization, on the other hand, ensures that features follow a normal distribution. You can use libraries like <code>scikit-learn</code> to apply scaling:</p>
+            <pre><code>from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+# Standard scaling
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(data)
+
+# Min-Max scaling
+min_max_scaler = MinMaxScaler()
+data_normalized = min_max_scaler.fit_transform(data)</code></pre>
+            <p>Choose the scaling method that suits your dataset and problem domain best.</p>
+
+            <h3>7. Splitting the Dataset</h3>
+            <p>To evaluate your machine learning model, you need to split the dataset into training and testing sets. The training set is used to build the model, while the testing set is used to evaluate its performance. Use the following code to split your dataset:</p>
+            <pre><code>from sklearn.model_selection import train_test_split
+
+# Split dataset into features (X) and target variable (y)
+X = data.drop('target_column', axis=1)
+y = data['target_column']
+
+# Split into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)</code></pre>
+            <p>This code snippet splits the dataset with 80% for training and 20% for testing. Adjust the <strong>test_size</strong> parameter according to your needs.</p>
+
+            <h3>8. Feature Engineering</h3>
+            <p>Feature engineering involves creating new features or modifying existing ones to improve the model's performance. This step requires domain knowledge and creativity to extract meaningful insights from the data.</p>
+            <p>Common feature engineering techniques include:</p>
+            <ul>
+                <li>Creating interaction terms between features</li>
+                <li>Extracting date-based features like day, month, and year</li>
+                <li>Transforming non-linear features using mathematical functions</li>
+            </ul>
+            
+            <h3>9. Final Thoughts on Data Preprocessing</h3>
+            <p>Data preprocessing is an iterative process. You may need to revisit these steps multiple times to refine the data before applying machine learning algorithms. A well-preprocessed dataset not only helps in achieving better model accuracy but also ensures that the model generalizes well to unseen data.</p>
+            <p>By following these data preprocessing techniques, you can lay a strong foundation for building robust machine learning models.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Basics and Advanced Queries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SQL Basics and Advanced Queries</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to SQL</h2>
+            <p>SQL (Structured Query Language) is the standard language for interacting with relational databases. It allows users to create, read, update, and delete data stored in a database. SQL is essential for managing and manipulating data efficiently.</p>
+        </section>
+        <section>
+            <h2>Basic SQL Commands</h2>
+            <ul>
+                <li><strong>SELECT:</strong> Used to retrieve data from one or more tables.
+                    <pre><code>SELECT column1, column2 FROM table_name;</code></pre>
+                </li>
+                <li><strong>INSERT:</strong> Adds new data into a table.
+                    <pre><code>INSERT INTO table_name (column1, column2) VALUES (value1, value2);</code></pre>
+                </li>
+                <li><strong>UPDATE:</strong> Modifies existing data in a table.
+                    <pre><code>UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;</code></pre>
+                </li>
+                <li><strong>DELETE:</strong> Removes data from a table.
+                    <pre><code>DELETE FROM table_name WHERE condition;</code></pre>
+                </li>
+                <li><strong>CREATE TABLE:</strong> Creates a new table in the database.
+                    <pre><code>CREATE TABLE table_name (column1 datatype, column2 datatype);</code></pre>
+                </li>
+                <li><strong>ALTER TABLE:</strong> Modifies an existing table.
+                    <pre><code>ALTER TABLE table_name ADD column_name datatype;</code></pre>
+                </li>
+                <li><strong>DROP TABLE:</strong> Deletes a table from the database.
+                    <pre><code>DROP TABLE table_name;</code></pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Advanced SQL Queries</h2>
+            <p>Advanced SQL queries help in performing complex data manipulations and retrieval operations. These include joining tables, subqueries, and aggregation functions.</p>
+        </section>
+        <section>
+            <h3>Joins</h3>
+            <p>Joins are used to combine rows from two or more tables based on a related column. Common types of joins include:</p>
+            <ul>
+                <li><strong>INNER JOIN:</strong> Returns records with matching values in both tables.
+                    <pre><code>SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;</code></pre>
+                </li>
+                <li><strong>LEFT JOIN:</strong> Returns all records from the left table and the matched records from the right table.
+                    <pre><code>SELECT columns FROM table1 LEFT JOIN table2 ON table1.column = table2.column;</code></pre>
+                </li>
+                <li><strong>RIGHT JOIN:</strong> Returns all records from the right table and the matched records from the left table.
+                    <pre><code>SELECT columns FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;</code></pre>
+                </li>
+                <li><strong>FULL JOIN:</strong> Returns all records when there is a match in either table.
+                    <pre><code>SELECT columns FROM table1 FULL JOIN table2 ON table1.column = table2.column;</code></pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Subqueries</h3>
+            <p>Subqueries are nested queries that provide data to the enclosing query. They are used for more complex data retrieval and manipulation.</p>
+            <pre><code>SELECT column1 FROM table_name WHERE column2 = (SELECT column2 FROM table_name2 WHERE condition);</code></pre>
+        </section>
+        <section>
+            <h3>Aggregation Functions</h3>
+            <p>Aggregation functions perform calculations on a set of values and return a single value. Common functions include:</p>
+            <ul>
+                <li><strong>COUNT:</strong> Returns the number of rows.
+                    <pre><code>SELECT COUNT(column_name) FROM table_name;</code></pre>
+                </li>
+                <li><strong>SUM:</strong> Returns the sum of values.
+                    <pre><code>SELECT SUM(column_name) FROM table_name;</code></pre>
+                </li>
+                <li><strong>AVG:</strong> Returns the average value.
+                    <pre><code>SELECT AVG(column_name) FROM table_name;</code></pre>
+                </li>
+                <li><strong>MIN:</strong> Returns the minimum value.
+                    <pre><code>SELECT MIN(column_name) FROM table_name;</code></pre>
+                </li>
+                <li><strong>MAX:</strong> Returns the maximum value.
+                    <pre><code>SELECT MAX(column_name) FROM table_name;</code></pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>SQL is a powerful language for managing and manipulating relational databases. Understanding both basic and advanced SQL queries is essential for efficient database management and data analysis.</p>
+        </section>
+    </main>
+    <footer>
+    

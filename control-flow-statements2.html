@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Course - Control Flow Statements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Control Flow Statements</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Control Flow Statements</h2>
+            <p>Control flow statements in Java allow you to control the execution flow of your program. They help in making decisions, looping through code, and managing various conditions within your application. This section covers the primary control flow statements in Java.</p>
+
+            <h3>1. Conditional Statements</h3>
+            <p>Conditional statements are used to execute code based on specific conditions. Java provides several types of conditional statements:</p>
+
+            <h4>If Statement</h4>
+            <p>The <code>if</code> statement executes a block of code if a specified condition evaluates to <code>true</code>. Here's an example:</p>
+            <pre><code>int number = 10;
+if (number > 0) {
+    System.out.println("The number is positive.");
+}
+</code></pre>
+
+            <h4>If-Else Statement</h4>
+            <p>The <code>if-else</code> statement executes one block of code if the condition is <code>true</code> and another block if it is <code>false</code>. Example:</p>
+            <pre><code>int number = -5;
+if (number >= 0) {
+    System.out.println("The number is non-negative.");
+} else {
+    System.out.println("The number is negative.");
+}
+</code></pre>
+
+            <h4>Else-If Ladder</h4>
+            <p>The <code>else-if</code> ladder allows multiple conditions to be checked sequentially. Example:</p>
+            <pre><code>int score = 85;
+if (score >= 90) {
+    System.out.println("Grade: A");
+} else if (score >= 80) {
+    System.out.println("Grade: B");
+} else if (score >= 70) {
+    System.out.println("Grade: C");
+} else {
+    System.out.println("Grade: D");
+}
+</code></pre>
+
+            <h4>Switch Statement</h4>
+            <p>The <code>switch</code> statement selects one of many code blocks to execute based on the value of an expression. Example:</p>
+            <pre><code>int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    case 4:
+        System.out.println("Thursday");
+        break;
+    case 5:
+        System.out.println("Friday");
+        break;
+    case 6:
+        System.out.println("Saturday");
+        break;
+    case 7:
+        System.out.println("Sunday");
+        break;
+    default:
+        System.out.println("Invalid day");
+        break;
+}
+</code></pre>
+
+            <h3>2. Looping Statements</h3>
+            <p>Looping statements are used to execute a block of code repeatedly based on certain conditions. Java provides several types of looping statements:</p>
+
+            <h4>For Loop</h4>
+            <p>The <code>for</code> loop is used when the number of iterations is known. Example:</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    System.out.println("Iteration: " + i);
+}
+</code></pre>
+
+            <h4>While Loop</h4>
+            <p>The <code>while</code> loop is used when the number of iterations is not known and the loop should continue while a condition is <code>true</code>. Example:</p>
+            <pre><code>int i = 0;
+while (i < 5) {
+    System.out.println("Iteration: " + i);
+    i++;
+}
+</code></pre>
+
+            <h4>Do-While Loop</h4>
+            <p>The <code>do-while</code> loop is similar to the <code>while</code> loop, but it guarantees that the loop will execute at least once. Example:</p>
+            <pre><code>int i = 0;
+do {
+    System.out.println("Iteration: " + i);
+    i++;
+} while (i < 5);
+</code></pre>
+
+            <h3>3. Jump Statements</h3>
+            <p>Jump statements are used to transfer control to other parts of the program. Java provides three jump statements:</p>
+
+            <h4>Break Statement</h4>
+            <p>The <code>break</code> statement exits from the current loop or switch statement. Example:</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    if (i == 3) {
+        break;
+    }
+    System.out.println("Iteration: " + i);
+}
+</code></pre>
+
+            <h4>Continue Statement</h4>
+            <p>The <code>continue</code> statement skips the current iteration of the loop and proceeds with the next iteration. Example:</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    if (i == 3) {
+        continue;
+    }
+    System.out.println("Iteration: " + i);
+}
+</code></pre>
+
+            <h4>Return Statement</h4>
+            <p>The <code>return</code> statement exits from the current method and optionally returns a value. Example:</p>
+            <pre><code>public int add(int a, int b) {
+    return a + b;
+}
+</code></pre>
+
+            <h3>4. Conclusion</h3>
+            <p>Control flow statements are fundamental in Java programming as they allow you to dictate the flow of execution based on various conditions and loops. Mastering these statements is essential for developing robust and efficient Java applications.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Java Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

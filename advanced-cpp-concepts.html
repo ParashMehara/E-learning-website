@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Advanced C++ Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Advanced C++ Concepts</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Advanced C++ Concepts</h2>
+            <p>In addition to the basic syntax and features of C++, there are several advanced concepts that are crucial for mastering the language. These concepts enhance your ability to write efficient, maintainable, and robust C++ code. This section covers some of these advanced concepts in detail.</p>
+
+            <h3>1. Smart Pointers</h3>
+            <p>Smart pointers are a part of the C++ Standard Library that manage the lifetime of dynamically allocated objects. They help prevent memory leaks and dangling pointers by automatically deallocating memory when it is no longer needed.</p>
+            <ul>
+                <li><strong>std::unique_ptr:</strong> A smart pointer that owns a dynamically allocated object exclusively. It cannot be copied but can be moved.</li>
+                <li><strong>std::shared_ptr:</strong> A smart pointer that allows multiple pointers to own the same object. It keeps track of the number of owners and deletes the object when the last owner is destroyed.</li>
+                <li><strong>std::weak_ptr:</strong> A smart pointer that provides a non-owning "weak" reference to an object managed by <code>std::shared_ptr</code>. It helps to break circular references.</li>
+            </ul>
+
+            <h4>Example of Using std::unique_ptr</h4>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;memory&gt;
+
+class MyClass {
+public:
+    MyClass() { std::cout &lt;&lt; "MyClass constructed" &lt;&lt; std::endl; }
+    ~MyClass() { std::cout &lt;&lt; "MyClass destroyed" &lt;&lt; std::endl; }
+};
+
+int main() {
+    std::unique_ptr&lt;MyClass&gt; ptr1 = std::make_unique&lt;MyClass&gt;();
+    std::unique_ptr&lt;MyClass&gt; ptr2 = std::move(ptr1); // Transfer ownership
+
+    if (!ptr1) {
+        std::cout &lt;&lt; "ptr1 is now nullptr" &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>2. Lambda Expressions</h3>
+            <p>Lambda expressions provide a way to define anonymous functions directly in the code. They are particularly useful for short-lived functions that are used only in one place. Lambda expressions simplify code and improve readability.</p>
+
+            <h4>Basic Syntax of Lambda Expressions</h4>
+            <pre><code// Syntax: [capture](parameters) -> return_type { body }
+auto lambda = [](int a, int b) -> int {
+    return a + b;
+};
+
+int main() {
+    std::cout &lt;&lt; lambda(5, 3) &lt;&lt; std::endl; // Output: 8
+    return 0;
+}
+</code></pre>
+
+            <h3>3. Templates</h3>
+            <p>Templates allow you to write generic and reusable code. They enable the creation of functions and classes that operate with any data type without being explicitly specified. C++ supports both function templates and class templates.</p>
+
+            <h4>Function Template Example</h4>
+            <pre><code#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+T max(T a, T b) {
+    return (a &gt; b) ? a : b;
+}
+
+int main() {
+    std::cout &lt;&lt; max(3, 7) &lt;&lt; std::endl; // Output: 7
+    std::cout &lt;&lt; max(3.5, 2.5) &lt;&lt; std::endl; // Output: 3.5
+    return 0;
+}
+</code></pre>
+
+            <h4>Class Template Example</h4>
+            <pre><code#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+class Container {
+private:
+    T value;
+public:
+    Container(T v) : value(v) {}
+    void show() { std::cout &lt;&lt; value &lt;&lt; std::endl; }
+};
+
+int main() {
+    Container&lt;int&gt; intContainer(5);
+    Container&lt;std::string&gt; stringContainer("Hello");
+
+    intContainer.show(); // Output: 5
+    stringContainer.show(); // Output: Hello
+
+    return 0;
+}
+</code></pre>
+
+            <h3>4. Exception Handling</h3>
+            <p>Exception handling in C++ is used to manage errors and exceptional conditions. The core components of exception handling in C++ are <code>try</code>, <code>catch</code>, and <code>throw</code>. They allow you to handle runtime errors gracefully and ensure that the program can continue or terminate properly.</p>
+
+            <h4>Basic Example of Exception Handling</h4>
+            <pre><code#include &lt;iostream&gt;
+
+int divide(int a, int b) {
+    if (b == 0) {
+        throw std::runtime_error("Division by zero");
+    }
+    return a / b;
+}
+
+int main() {
+    try {
+        std::cout &lt;&lt; divide(10, 2) &lt;&lt; std::endl; // Output: 5
+        std::cout &lt;&lt; divide(10, 0) &lt;&lt; std::endl; // Throws exception
+    } catch (const std::exception &e) {
+        std::cerr &lt;&lt; "Error: " &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>5. Multithreading</h3>
+            <p>Multithreading allows a program to perform multiple tasks concurrently, improving performance and responsiveness. C++11 introduced support for multithreading through the <code>&lt;thread&gt;</code> library.</p>
+
+            <h4>Basic Example of Multithreading</h4>
+            <pre><code#include &lt;iostream&gt;
+#include &lt;thread&gt;
+
+void printHello() {
+    std::cout &lt;&lt; "Hello from thread" &lt;&lt; std::endl;
+}
+
+int main() {
+    std::thread t(printHello); // Create a thread
+    t.join(); // Wait for the thread to finish
+
+    return 0;
+}
+</code></pre>
+
+            <h3>6. Standard Template Library (STL)</h3>
+            <p>The Standard Template Library (STL) provides a set of C++ template classes to manage collections of data. It includes useful containers such as vectors, lists, sets, and maps, as well as algorithms to operate on these containers.</p>
+
+            <h4>Example of Using STL Containers</h4>
+            <pre><code#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+
+    for (const auto &num : numbers) {
+        std::cout &lt;&lt; num &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Conclusion</h3>
+            <p>Advanced C++ concepts are essential for writing efficient, maintainable, and high-performance C++ programs. By mastering these topics, you will gain a deeper understanding of the language and its capabilities, enabling you to tackle more complex programming challenges.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

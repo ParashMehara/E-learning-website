@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - Templates and Standard Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Templates and Standard Library</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>Templates and Standard Library</h2>
+            <p>Templates and the Standard Library are two essential features in C++ that help in writing generic and reusable code. Templates allow you to create functions and classes that can operate with any data type, while the Standard Library provides a collection of useful functions and classes for common tasks.</p>
+
+            <h3>Templates</h3>
+            <p>Templates enable you to write generic and type-safe code. There are two main types of templates in C++:</p>
+            <ul>
+                <li><strong>Function Templates:</strong> Allow you to create functions that work with different data types.</li>
+                <li><strong>Class Templates:</strong> Enable you to create classes that can handle various data types.</li>
+            </ul>
+
+            <h4>Function Templates</h4>
+            <p>Function templates allow you to define a function that works with any data type. Here's an example of a function template that swaps two values:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+void swap(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swap(x, y);
+    std::cout &lt;&lt; "x: " &lt;&lt; x &lt;&lt; ", y: " &lt;&lt; y &lt;&lt; std::endl;
+
+    double a = 1.1, b = 2.2;
+    swap(a, b);
+    std::cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; ", b: " &lt;&lt; b &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+
+            <h4>Class Templates</h4>
+            <p>Class templates allow you to create classes that can operate with any data type. Here's an example of a class template for a simple stack:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+class Stack {
+private:
+    T *arr;
+    int top;
+    int capacity;
+
+public:
+    Stack(int size) : capacity(size), top(-1) {
+        arr = new T[capacity];
+    }
+
+    ~Stack() {
+        delete[] arr;
+    }
+
+    void push(T value) {
+        if (top &lt; capacity - 1) {
+            arr[++top] = value;
+        } else {
+            std::cout &lt;&lt; "Stack overflow." &lt;&lt; std::endl;
+        }
+    }
+
+    T pop() {
+        if (top &gt;= 0) {
+            return arr[top--];
+        } else {
+            std::cout &lt;&lt; "Stack underflow." &lt;&lt; std::endl;
+            return T();
+        }
+    }
+
+    bool isEmpty() const {
+        return top == -1;
+    }
+};
+
+int main() {
+    Stack&lt;int&gt; intStack(5);
+    intStack.push(10);
+    intStack.push(20);
+    std::cout &lt;&lt; "Popped: " &lt;&lt; intStack.pop() &lt;&lt; std::endl;
+
+    Stack&lt;std::string&gt; stringStack(3);
+    stringStack.push("Hello");
+    stringStack.push("World");
+    std::cout &lt;&lt; "Popped: " &lt;&lt; stringStack.pop() &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+
+            <h3>The Standard Library</h3>
+            <p>The C++ Standard Library provides a rich set of functions and classes for handling common tasks, such as input/output, data manipulation, and algorithms. Some key components of the Standard Library include:</p>
+            <ul>
+                <li><strong>STL Containers:</strong> Includes vectors, lists, maps, sets, and more, which are used to store and manage collections of data.</li>
+                <li><strong>STL Algorithms:</strong> Provides functions for sorting, searching, and manipulating data in containers.</li>
+                <li><strong>Utilities:</strong> Includes features like smart pointers and tuples that help manage resources and group related data.</li>
+            </ul>
+
+            <h4>Example of Using the Standard Library</h4>
+            <p>Here's a simple example that demonstrates the use of the <code>std::vector</code> container and some algorithms from the Standard Library:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {5, 3, 8, 1, 2};
+
+    std::sort(numbers.begin(), numbers.end());
+
+    std::cout &lt;&lt; "Sorted numbers: ";
+    for (int num : numbers) {
+        std::cout &lt;&lt; num &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    auto it = std::find(numbers.begin(), numbers.end(), 8);
+    if (it != numbers.end()) {
+        std::cout &lt;&lt; "Found 8 in the vector." &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "8 not found in the vector." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>Conclusion</h3>
+            <p>Templates and the Standard Library are powerful tools in C++ that promote code reusability and efficiency. By leveraging templates, you can write generic code that works with various data types, and by using the Standard Library, you can simplify complex tasks with well-tested components.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

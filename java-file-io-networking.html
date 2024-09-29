@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Course - File I/O and Networking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>File I/O and Networking</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>File I/O and Networking</h2>
+            <p>In Java, File I/O (Input/Output) is handled through a set of classes and interfaces that allow for reading and writing data to files. Networking in Java is achieved through classes and interfaces that facilitate communication between systems over a network.</p>
+
+            <h3>1. File I/O Operations</h3>
+            <p>Java provides a rich set of APIs for performing file I/O operations. The primary classes used are `File`, `FileReader`, `FileWriter`, `BufferedReader`, and `BufferedWriter`.</p>
+
+            <h4>Reading from a File</h4>
+            <p>To read data from a file, you can use `FileReader` and `BufferedReader`:</p>
+            <pre><code>import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReadExample {
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("example.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+            <h4>Writing to a File</h4>
+            <p>To write data to a file, you can use `FileWriter` and `BufferedWriter`:</p>
+            <pre><code>import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriteExample {
+    public static void main(String[] args) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("example.txt"))) {
+            writer.write("Hello, World!");
+            writer.newLine();
+            writer.write("Welcome to Java File I/O.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+            <h3>2. Networking in Java</h3>
+            <p>Java provides a set of classes for network communication, including `Socket`, `ServerSocket`, `URLConnection`, and `HttpURLConnection`.</p>
+
+            <h4>Creating a Simple Client</h4>
+            <p>A simple client can be created using the `Socket` class to connect to a server:</p>
+            <pre><code>import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+public class SimpleClient {
+    public static void main(String[] args) {
+        try (Socket socket = new Socket("localhost", 12345);
+             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+            out.println("Hello Server!");
+            String response = in.readLine();
+            System.out.println("Server Response: " + response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+            <h4>Creating a Simple Server</h4>
+            <p>A simple server can be created using the `ServerSocket` class to listen for incoming connections:</p>
+            <pre><code>import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class SimpleServer {
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(12345)) {
+            System.out.println("Server is listening on port 12345");
+            try (Socket socket = serverSocket.accept();
+                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+                System.out.println("Client connected");
+                String message = in.readLine();
+                System.out.println("Received from client: " + message);
+                out.println("Hello Client!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+            <h4>Using URL and HTTP Connections</h4>
+            <p>To perform HTTP operations, you can use the `HttpURLConnection` class:</p>
+            <pre><code>import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class HttpExample {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("https://www.example.com");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String inputLine;
+                while ((inputLine = in.readLine()) != null) {
+                    System.out.println(inputLine);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Java Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

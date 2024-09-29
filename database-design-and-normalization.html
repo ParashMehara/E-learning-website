@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Design and Normalization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Database Design and Normalization</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Database Design</h2>
+            <p>Database design is the process of defining the structure, storage, and retrieval of data within a database. A well-designed database ensures data integrity, reduces redundancy, and improves query performance.</p>
+        </section>
+        <section>
+            <h2>Steps in Database Design</h2>
+            <ol>
+                <li><strong>Requirements Analysis:</strong> Gather and analyze the data requirements of the system. Identify the data to be stored and how it will be used.</li>
+                <li><strong>Conceptual Design:</strong> Create an abstract model of the database, often represented as an Entity-Relationship (ER) diagram. This model includes entities, attributes, and relationships.</li>
+                <li><strong>Logical Design:</strong> Convert the conceptual model into a logical model, often represented as tables in a relational database. Define primary keys, foreign keys, and constraints.</li>
+                <li><strong>Physical Design:</strong> Determine how the logical design will be implemented in the database management system (DBMS). This includes choosing data types, indexing strategies, and partitioning schemes.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Normalization</h2>
+            <p>Normalization is the process of organizing data in a database to minimize redundancy and improve data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them.</p>
+            <p>Normalization typically involves applying a series of rules called normal forms. The most commonly used normal forms are:</p>
+            <ul>
+                <li><strong>First Normal Form (1NF):</strong> Ensure each table column contains atomic, indivisible values. Eliminate repeating groups and arrays.</li>
+                <li><strong>Second Normal Form (2NF):</strong> Achieve 1NF and ensure all non-key columns are fully dependent on the primary key. Eliminate partial dependencies.</li>
+                <li><strong>Third Normal Form (3NF):</strong> Achieve 2NF and ensure all non-key columns are only dependent on the primary key. Eliminate transitive dependencies.</li>
+                <li><strong>Boyce-Codd Normal Form (BCNF):</strong> A stricter version of 3NF, ensuring no anomalies remain due to functional dependencies.</li>
+                <li><strong>Fourth Normal Form (4NF):</strong> Ensure 3NF and eliminate multi-valued dependencies.</li>
+                <li><strong>Fifth Normal Form (5NF):</strong> Ensure 4NF and decompose tables to eliminate redundancy without losing data.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Benefits of Normalization</h3>
+            <ul>
+                <li><strong>Data Integrity:</strong> Ensures accuracy and consistency of data by eliminating redundancy and anomalies.</li>
+                <li><strong>Efficient Data Retrieval:</strong> Improves query performance by reducing the amount of data processed and simplifying joins.</li>
+                <li><strong>Scalability:</strong> Facilitates easier database maintenance and scalability as the system grows.</li>
+                <li><strong>Maintainability:</strong> Simplifies updates and modifications to the database schema by minimizing dependencies.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Denormalization</h2>
+            <p>Denormalization is the process of intentionally introducing redundancy into a database design to improve read performance. While normalization focuses on eliminating redundancy, denormalization can enhance performance in read-heavy applications by reducing the number of joins required in queries.</p>
+        </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>Effective database design and normalization are critical for building reliable, efficient, and scalable databases. By following the principles of normalization and understanding when to apply denormalization, database designers can create robust systems that meet the needs of modern applications.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

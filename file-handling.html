@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Course - File Handling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>File Handling</h1>
+    </header>
+
+    <main>
+        <section class="course-section">
+            <h2>File Handling</h2>
+            <p>File handling in C++ involves performing operations such as reading from and writing to files. C++ provides a set of file stream classes to manage file input and output.</p>
+
+            <h3>Basics of File Handling</h3>
+            <p>C++ uses the following classes for file handling:</p>
+            <ul>
+                <li><strong>std::ifstream:</strong> Used for reading from files.</li>
+                <li><strong>std::ofstream:</strong> Used for writing to files.</li>
+                <li><strong>std::fstream:</strong> Used for both reading from and writing to files.</li>
+            </ul>
+
+            <h4>Example of Writing to a File</h4>
+            <p>Here's a simple example demonstrating how to write data to a file using <code>std::ofstream</code>:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    std::ofstream outFile("example.txt");
+
+    if (outFile.is_open()) {
+        outFile &lt;&lt; "Hello, file handling in C++!" &lt;&lt; std::endl;
+        outFile.close();
+        std::cout &lt;&lt; "Data written to file successfully." &lt;&lt; std::endl;
+    } else {
+        std::cerr &lt;&lt; "Error opening file for writing." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h4>Example of Reading from a File</h4>
+            <p>Here's a simple example demonstrating how to read data from a file using <code>std::ifstream</code>:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::ifstream inFile("example.txt");
+    std::string line;
+
+    if (inFile.is_open()) {
+        while (std::getline(inFile, line)) {
+            std::cout &lt;&lt; line &lt;&lt; std::endl;
+        }
+        inFile.close();
+    } else {
+        std::cerr &lt;&lt; "Error opening file for reading." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+            <h3>File Modes</h3>
+            <p>When opening a file, you can specify the mode in which the file should be opened. Some common file modes include:</p>
+            <ul>
+                <li><strong>std::ios::in:</strong> Open the file for reading.</li>
+                <li><strong>std::ios::out:</strong> Open the file for writing (creates a new file or truncates an existing file).</li>
+                <li><strong>std::ios::app:</strong> Open the file for appending (writes to the end of the file).</li>
+                <li><strong>std::ios::ate:</strong> Open the file and move the read/write position to the end.</li>
+                <li><strong>std::ios::binary:</strong> Open the file in binary mode.</li>
+            </ul>
+
+            <h3>Handling File Errors</h3>
+            <p>Always check if a file was opened successfully before performing file operations. Use the <code>is_open()</code> method to verify that the file stream is associated with a valid file. Handle any potential errors appropriately to avoid issues in your program.</p>
+
+            <h3>Conclusion</h3>
+            <p>File handling is an essential skill in C++ programming. Understanding how to read from and write to files, as well as how to handle file errors, is crucial for creating programs that interact with external data. Practice these techniques to become proficient in file management in C++.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 C++ Programming Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unsupervised Learning Algorithms - Machine Learning with Python Course">
+    <title>Unsupervised Learning Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning with Python</h1>
+    </header>
+
+    <main>
+        <section id="unsupervised-learning">
+            <h2>Unsupervised Learning Algorithms</h2>
+            <p>Unsupervised learning is a type of machine learning where the model is trained on data that has no labels or target values. Unlike supervised learning, where the model learns to map inputs to known outputs, unsupervised learning aims to find hidden patterns and structures in the data. This is particularly useful when dealing with large amounts of unstructured data or when we want to explore data without predefined categories. In this section, we will explore some of the most common unsupervised learning algorithms and their applications.</p>
+
+            <h3>1. What is Unsupervised Learning?</h3>
+            <p>Unsupervised learning algorithms work on data that is unlabeled and uncategorized. The goal is to find underlying structures, patterns, or relationships within the data. Unsupervised learning can be categorized into two main types:</p>
+            <ul>
+                <li><strong>Clustering:</strong> Grouping similar data points together based on their features. Examples include customer segmentation, grouping news articles, or detecting anomalies in data.</li>
+                <li><strong>Association:</strong> Finding relationships between variables in the data, such as market basket analysis, where we discover which products are frequently bought together.</li>
+            </ul>
+
+            <h3>2. Common Unsupervised Learning Algorithms</h3>
+            <p>Below are some popular unsupervised learning algorithms and their typical applications:</p>
+
+            <h4>2.1. K-Means Clustering</h4>
+            <p>K-Means is a clustering algorithm that partitions data into k distinct clusters based on the similarity of their features. The algorithm works by initializing k cluster centroids and iteratively assigning data points to the nearest centroid. The centroids are updated until the clusters remain stable.</p>
+            <pre><code>from sklearn.cluster import KMeans
+
+# Create a KMeans model
+model = KMeans(n_clusters=3)
+model.fit(X)</code></pre>
+            <p>K-Means is simple to implement and computationally efficient but may struggle with non-globular clusters or varying cluster sizes.</p>
+
+            <h4>2.2. Hierarchical Clustering</h4>
+            <p>Hierarchical Clustering is a clustering algorithm that builds a hierarchy of clusters by either merging smaller clusters into larger ones (agglomerative) or splitting larger clusters into smaller ones (divisive). The output is a dendrogram, which provides a visual representation of the hierarchical structure.</p>
+            <pre><code>from scipy.cluster.hierarchy import dendrogram, linkage
+
+# Generate the linkage matrix
+Z = linkage(X, 'ward')
+dendrogram(Z)</code></pre>
+            <p>Hierarchical clustering does not require specifying the number of clusters in advance, and it provides insights into the data’s structure. However, it is computationally expensive for large datasets.</p>
+
+            <h4>2.3. Principal Component Analysis (PCA)</h4>
+            <p>Principal Component Analysis is a dimensionality reduction technique that transforms high-dimensional data into a lower-dimensional space while preserving as much variance as possible. It identifies the principal components (orthogonal vectors) that capture the most variance in the data.</p>
+            <pre><code>from sklearn.decomposition import PCA
+
+# Create a PCA model
+model = PCA(n_components=2)
+X_reduced = model.fit_transform(X)</code></pre>
+            <p>PCA is useful for visualizing high-dimensional data and reducing computational complexity. It is often used as a preprocessing step before applying other machine learning algorithms.</p>
+
+            <h4>2.4. Independent Component Analysis (ICA)</h4>
+            <p>Independent Component Analysis is another dimensionality reduction technique that focuses on separating a multivariate signal into additive independent components. It is commonly used in signal processing and feature extraction applications, such as separating sources of mixed audio signals.</p>
+            <pre><code>from sklearn.decomposition import FastICA
+
+# Create an ICA model
+model = FastICA(n_components=2)
+X_reduced = model.fit_transform(X)</code></pre>
+            <p>ICA works well when the data is composed of non-Gaussian sources and can reveal underlying factors or sources in the data.</p>
+
+            <h4>2.5. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</h4>
+            <p>DBSCAN is a clustering algorithm that groups data points based on their density. It works by defining "core" points that have a minimum number of neighbors within a specified radius. Clusters are formed around these core points, and outlier points that do not meet the density criteria are marked as noise.</p>
+            <pre><code>from sklearn.cluster import DBSCAN
+
+# Create a DBSCAN model
+model = DBSCAN(eps=0.5, min_samples=5)
+model.fit(X)</code></pre>
+            <p>DBSCAN is robust to noise and can detect arbitrarily shaped clusters. It is suitable for tasks such as anomaly detection and spatial clustering. However, it can struggle with varying densities and high-dimensional data.</p>
+
+            <h4>2.6. Association Rule Learning</h4>
+            <p>Association Rule Learning is used to discover interesting relationships or associations between variables in large datasets. It is commonly applied in market basket analysis, where rules like "If a customer buys product A, they are likely to buy product B" can be identified.</p>
+            <pre><code>from mlxtend.frequent_patterns import apriori, association_rules
+
+# Create association rules
+frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True)
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1.0)</code></pre>
+            <p>Association Rule Learning can provide valuable insights into customer behavior and is widely used in recommendation systems and cross-selling strategies.</p>
+
+            <h3>3. Choosing the Right Algorithm</h3>
+            <p>When choosing an unsupervised learning algorithm, consider the nature of the data and the specific problem you are trying to solve. Clustering algorithms like K-Means and DBSCAN are suitable for grouping similar data points, while dimensionality reduction techniques like PCA and ICA are useful for reducing the complexity of high-dimensional data.</p>
+            <p>Understanding the strengths and limitations of each algorithm will help you make an informed decision and achieve the best results for your unsupervised learning tasks.</p>
+
+            <h3>4. Evaluating Unsupervised Learning Models</h3>
+            <p>Evaluating unsupervised learning models is more challenging than supervised learning, as there are no predefined labels to compare against. Some common evaluation metrics include:</p>
+            <ul>
+                <li><strong>Silhouette Score:</strong> Measures how similar an object is to its own cluster compared to other clusters. A higher score indicates well-defined clusters.</li>
+                <li><strong>Calinski-Harabasz Index:</strong> Measures the ratio of the sum of between-cluster dispersion and within-cluster dispersion. A higher value indicates better-defined clusters.</li>
+                <li><strong>Davies-Bouldin Index:</strong> Measures the average similarity ratio of each cluster with the cluster that is most similar to it. A lower value indicates better clustering.</li>
+            </ul>
+
+            <h3>5. Final Thoughts on Unsupervised Learning</h3>
+            <p>Unsupervised learning is a powerful tool for discovering hidden patterns and structures in data. It is widely used for clustering, dimensionality reduction, and association analysis. By choosing the right algorithm and evaluating its performance, you can gain valuable insights into your data and uncover relationships that may not be immediately apparent.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
