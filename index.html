@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSM E-Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>RSM E-Learning Platform</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Welcome to the E-Learning Platform</h2>
+        <p>Learn web development, programming languages, and more!</p>
+        <button onclick="scrollToCourses()">Get Started</button>
+    </div>
+
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+            <div class="course-container">
+                <div class="course">
+                    <h3>Web Development</h3>
+                    <p>Learn HTML, CSS, and JavaScript to build modern websites.</p>
+					<p><a href="web.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Python Programming</h3>
+                    <p>From basics to advanced, learn Python programming.</p>
+					<p><a href="python.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>C Programming</h3>
+                    <p>Understand the fundamentals of C programming language.</p>
+					<p><a href="c.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>C++ Programming</h3>
+                    <p>Master C++ concepts from basic to advanced.</p>
+					<p><a href="cplus.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Java Programming</h3>
+                    <p>Learn Java from basics to advanced concepts.</p>
+					<p><a href="java.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Database Management</h3>
+                    <p>Learn SQL and NoSQL databases, design, and management.</p>
+					<p><a href="dbms.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Data Science</h3>
+                    <p>Explore data analysis, visualization, and machine learning.</p>
+					<p><a href="ds.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+			<div class="course-container">
+                <div class="course">
+                    <h3>Machine Learning with Python</h3>
+                    <p>Explore the basics of Machine Learning using Python, including algorithms, data preprocessing, and model evaluation.</p>
+					<p><a href="ml.html" class="Web Development-link">Click here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to E-Learning Platform, your number one source for learning web development, programming languages, and more. We're dedicated to giving you the very best of online education, with a focus on quality, comprehensiveness, and accessibility.</p>
+    <p>Founded in 2024, E-Learning Platform has come a long way from its beginnings. When we first started out, our passion for providing accessible and high-quality education drove us to start this platform so that E-Learning Platform can offer you the most comprehensive online learning experience.</p>
+    <p>We now serve learners all over the world and are thrilled that we're able to turn our passion into our own website.</p>
+    <p>We hope you enjoy our courses as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+    <p><strong>Sincerely,</strong></p>
+    <p>The RSM E-Learning Platform Team</p>
+	</section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 E-Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function scrollToCourses() {
+        document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>

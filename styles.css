@@ -1,0 +1,307 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background: #f4f4f4; /* Light grey background for contrast */
+    color: #333; /* Dark text color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #000; /* Black background */
+    color: #ffeb3b; /* Yellow text */
+    display: flex;
+    justify-content: space-between; /* Align items to the edges */
+    align-items: center;
+    padding: 20px 40px;
+}
+
+header h1 {
+    margin: 0;
+    margin-left: -10px; /* Adjust the value as needed to shift left */
+    font-family: 'Georgia', serif;
+}
+
+nav {
+    margin-right: -10px; /* Adjust the value as needed to shift right */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffeb3b; /* Yellow text */
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffeb3b; /* Yellow background on hover */
+    color: #000; /* Black text on hover */
+    transform: scale(1.05);
+}
+
+.hero {
+    background: #000; /* Black background */
+    color: #ffeb3b; /* Yellow text */
+    text-align: center;
+    padding: 80px 20px;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+
+.hero h2 {
+    margin: 0 0 15px;
+    font-family: 'Georgia', serif;
+}
+
+.hero p {
+    margin: 0 0 25px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background-color: #ffd700; /* Yellow background */
+    color: #000; /* Black text */
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero button:hover {
+    background-color: #fbc02d; /* Darker yellow background on hover */
+    color: #000; /* Black text */
+    transform: scale(1.05);
+}
+
+.courses {
+    padding: 30px;
+    background: #000; /* Black background */
+    color: #ffeb3b; /* Yellow text */
+    text-align: center;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.courses h2 {
+    margin: 0 0 25px;
+    font-family: 'Georgia', serif;
+}
+
+.course-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course-container {
+    flex: 1 1 calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.course {
+    background: #ffd700; /* Yellow background */
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333; /* Dark border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.course:hover {
+    transform: scale(1.05);
+    background-color: #fbc02d; /* Darker yellow background on hover */
+}
+
+.course h3 {
+    margin-top: 0;
+    color: #000; /* Black text */
+}
+
+.course p {
+    color: #000; /* Black text for better visibility */
+}
+
+footer {
+    background: #333; /* Dark grey background */
+    color: #ffeb3b; /* Yellow text */
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional Sections */
+section {
+    padding: 25px;
+    background: #fff; /* White background for sections */
+    color: #000; /* Black text */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+section#about {
+    background: #ffd700; /* Yellow background */
+    color: #000; /* Black text */
+    padding: 30px;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+section#about h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em; /* Larger font size for the heading */
+    margin: 0 0 20px;
+    color: #000; /* Black text */
+}
+
+section#about p {
+    font-size: 1.1em; /* Slightly larger text */
+    line-height: 1.6; /* Increased line height for readability */
+    margin: 0 0 15px;
+}
+
+section#about p strong {
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+section#about p:last-of-type {
+    font-style: italic; /* Italicized text for the last paragraph */
+    font-size: 1.2em; /* Slightly larger font size */
+}
+
+section#contact {
+    background: #ffd700; /* Darker yellow background */
+    color: #000; /* Black text */
+}
+
+section#login {
+    background: #ffd700; /* Yellow background */
+    color: #000; /* Black text */
+}
+
+section#about, section#contact, section#login {
+    border: 3px solid #000; /* Black border with thicker width */
+}
+
+section#about p, section#contact p, section#login p,
+section#about label, section#contact label, section#login label {
+    color: #000; /* Black text */
+}
+
+section#about, section#contact, section#login {
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Course Page Styles */
+.course-intro, .course-content {
+    background-color: #000000; /* Black background */
+    color: #FFD700; /* Yellow text */
+    padding: 20px;
+    border: 2px solid #FFD700; /* Yellow border */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1); /* Yellow shadow */
+    text-align: left; /* Align text to the left */
+}
+
+.course-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.course-content li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #FFD700; /* Yellow border */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left; /* Align text to the left */
+}
+
+.course-content li:hover {
+    background-color: #FFD700; /* Yellow background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+.course-content li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color */
+}
+
+.course-content li a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color: inherit; /* Inherit the color */
+}
+
+/* Page Specific Styles */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main h2 {
+    color: #000; /* Black text for headings */
+    font-family: 'Georgia', serif;
+    margin-top: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+main p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+pre {
+    background: #333; /* Dark background for code */
+    color: #ffd700; /* Yellow text for code */
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto; /* Horizontal scroll for long code lines */
+    text-align: left; /* Align text to the left */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-container {
+        flex: 1 1 calc(50% - 20px); /* 2 courses per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .course-container {
+        flex: 1 1 100%; /* 1 course per row on very small screens */
+    }
+}
